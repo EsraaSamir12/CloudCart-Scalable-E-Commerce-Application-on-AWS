@@ -1,0 +1,2200 @@
+---
+Metadata:
+  AWSToolsMetrics:
+    IaC_Generator: "arn:aws:cloudformation:us-east-1:294427322944:generatedTemplate/6f989385-b75b-484d-86f8-50a67b2c9ddf"
+Parameters:
+  EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsCpuManufacturers9G2EE:
+    NoEcho: "true"
+    Type: "CommaDelimitedList"
+    Description: "The CPU manufacturers to include.\n  +  For instance types with\
+      \ Intel CPUs, specify ``intel``.\n  +  For instance types with AMD CPUs, specify\
+      \ ``amd``.\n  +  For instance types with AWS CPUs, specify ``amazon-web-services``.\n\
+      \  +  For instance types with Apple CPUs, specify ``apple``.\n  \n  Don't confuse\
+      \ the CPU manufacturer with the CPU architecture. Instances will be launched\
+      \ with a compatible CPU architecture based on the Amazon Machine Image (AMI)\
+      \ that you specify in your launch template.\n  Default: Any manufacturer"
+  EC2LaunchTemplateLaunchTemplateDataPlacementTenancyQOO90:
+    NoEcho: "true"
+    Type: "String"
+    Description: "The tenancy of the instance. An instance with a tenancy of dedicated\
+      \ runs on single-tenant hardware."
+  EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsNetworkInterfaceCountMaxwWTZG:
+    NoEcho: "true"
+    Type: "Number"
+    Description: "The maximum number of network interfaces. To specify no maximum\
+      \ limit, omit this parameter."
+  EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsAcceleratorTotalMemoryMiBMax6tsYS:
+    NoEcho: "true"
+    Type: "Number"
+    Description: "The maximum amount of accelerator memory, in MiB. To specify no\
+      \ maximum limit, omit this parameter."
+  EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsAcceleratorTotalMemoryMiBMinXDEf0:
+    NoEcho: "true"
+    Type: "Number"
+    Description: "The minimum amount of accelerator memory, in MiB. To specify no\
+      \ minimum limit, omit this parameter."
+  LambdaFunctionCloudCartS3ProcessorCodeZipFilePXgl6:
+    NoEcho: "true"
+    Type: "String"
+    Description: "(Node.js and Python) The source code of your Lambda function. If\
+      \ you include your function source inline with this parameter, CFN places it\
+      \ in a file named ``index`` and zips it to create a [deployment package](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html).\
+      \ This zip file cannot exceed 4MB. For the ``Handler`` property, the first part\
+      \ of the handler identifier must be ``index``. For example, ``index.handler``.\n\
+      \  When you specify source code inline for a Node.js function, the ``index``\
+      \ file that CFN creates uses the extension ``.js``. This means that Node.js\
+      \ treats the file as a CommonJS module.\n When using Node.js 24 or later, Node.js\
+      \ can automatically detect if a ``.js`` file should be treated as CommonJS or\
+      \ as an ES module. To enable auto-detection, add the ``--experimental-detect-module``\
+      \ flag to the ``NODE_OPTIONS`` environment variable. For more information, see\
+      \ [Experimental Node.js features](https://docs.aws.amazon.com//lambda/latest/dg/lambda-nodejs.html#nodejs-experimental-features).\n\
+      \   For JSON, you must escape quotes and special characters such as newline\
+      \ (``\\n``) with a backslash.\n If you specify a function that interacts with\
+      \ an AWS CloudFormation custom resource, you don't have to write your own functions\
+      \ to send responses to the custom resource that invoked the function. AWS CloudFormation\
+      \ provides a response module ([cfn-response](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-lambda-function-code-cfnresponsemodule.html))\
+      \ that simplifies sending responses. See [Using Lambda with CloudFormation](https://docs.aws.amazon.com/lambda/latest/dg/services-cloudformation.html)\
+      \ for details."
+  EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsAllowedInstanceTypesWQjEm:
+    NoEcho: "true"
+    Type: "CommaDelimitedList"
+    Description: "The instance types to apply your specified attributes against. All\
+      \ other instance types are ignored, even if they match your specified attributes.\n\
+      \ You can use strings with one or more wild cards, represented by an asterisk\
+      \ (``*``), to allow an instance type, size, or generation. The following are\
+      \ examples: ``m5.8xlarge``, ``c5*.*``, ``m5a.*``, ``r*``, ``*3*``.\n For example,\
+      \ if you specify ``c5*``,Amazon EC2 will allow the entire C5 instance family,\
+      \ which includes all C5a and C5n instance types. If you specify ``m5a.*``, Amazon\
+      \ EC2 will allow all the M5a instance types, but not the M5n instance types.\n\
+      \  If you specify ``AllowedInstanceTypes``, you can't specify ``ExcludedInstanceTypes``.\n\
+      \  Default: All instance types"
+  EC2LaunchTemplateLaunchTemplateDataPlacementPartitionNumberpYToH:
+    NoEcho: "true"
+    Type: "Number"
+    Description: "The number of the partition the instance should launch in. Valid\
+      \ only if the placement group strategy is set to ``partition``."
+  EC2LaunchTemplateLaunchTemplateDataHibernationOptionsConfiguredyL5Th:
+    NoEcho: "true"
+    Type: "String"
+    Description: "If you set this parameter to ``true``, the instance is enabled for\
+      \ hibernation.\n Default: ``false``"
+  EC2LaunchTemplateLaunchTemplateDataEnclaveOptionsEnabledcfSI0:
+    NoEcho: "true"
+    Type: "String"
+    Description: "If this parameter is set to ``true``, the instance is enabled for\
+      \ AWS Nitro Enclaves; otherwise, it is not enabled for AWS Nitro Enclaves."
+  LambdaFunctionCloudCartS3ProcessorCodeS3ObjectStorageModeoCGpe:
+    NoEcho: "true"
+    Type: "String"
+    Description: "Specifies the storage mode for the deployment package. Use ``COPY``\
+      \ to store the package in LAMlong-managed storage. Use ``REFERENCE`` to read\
+      \ the package directly from the Amazon S3 bucket. If omitted, the default is\
+      \ ``COPY``.Possible values: [COPY, REFERENCE]\nThis property can be replaced\
+      \ with other types"
+  EC2LaunchTemplateLaunchTemplateDataCpuOptionsThreadsPerCorepwBea:
+    NoEcho: "true"
+    Type: "Number"
+    Description: "The number of threads per CPU core. To disable multithreading for\
+      \ the instance, specify a value of ``1``. Otherwise, specify the default value\
+      \ of ``2``."
+  EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsNetworkBandwidthGbpsMineDZjf:
+    NoEcho: "true"
+    Type: "Number"
+    Description: "The minimum amount of network bandwidth, in Gbps. If this parameter\
+      \ is not specified, there is no minimum limit."
+  EC2LaunchTemplateLaunchTemplateDataEbsOptimized4SFlJ:
+    NoEcho: "true"
+    Type: "String"
+    Description: "Indicates whether the instance is optimized for Amazon EBS I/O.\
+      \ This optimization provides dedicated throughput to Amazon EBS and an optimized\
+      \ configuration stack to provide optimal Amazon EBS I/O performance. This optimization\
+      \ isn't available with all instance types. Additional usage charges apply when\
+      \ using an EBS-optimized instance."
+  EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsTotalLocalStorageGBMin3uxIy:
+    NoEcho: "true"
+    Type: "Number"
+    Description: "The minimum amount of total local storage, in GB. To specify no\
+      \ minimum limit, omit this parameter."
+  EC2LaunchTemplateLaunchTemplateDataImageIdtWLoE:
+    NoEcho: "true"
+    Type: "String"
+    Description: "The ID of the AMI. Alternatively, you can specify a Systems Manager\
+      \ parameter, which will resolve to an AMI ID on launch.\n Valid formats:\n \
+      \ +   ``ami-0ac394d6a3example`` \n  +   ``resolve:ssm:parameter-name`` \n  +\
+      \   ``resolve:ssm:parameter-name:version-number`` \n  +   ``resolve:ssm:parameter-name:label``\
+      \ \n  \n For more information, see [Use a Systems Manager parameter to find\
+      \ an AMI](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html#using-systems-manager-parameter-to-find-AMI)\
+      \ in the *Amazon Elastic Compute Cloud User Guide*."
+  LambdaFunctionCloudCartS3ProcessorCodeSourceKMSKeyArngX32c:
+    NoEcho: "true"
+    Type: "String"
+    Description: "The ARN of the KMSlong (KMS) customer managed key that's used to\
+      \ encrypt your function's .zip deployment package. If you don't provide a customer\
+      \ managed key, Lambda uses an [owned key](https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk)."
+  EC2LaunchTemplateLaunchTemplateDataMetadataOptionsHttpEndpointm8AzK:
+    NoEcho: "true"
+    Type: "String"
+    Description: "Enables or disables the HTTP metadata endpoint on your instances.\
+      \ If the parameter is not specified, the default state is ``enabled``.\n  If\
+      \ you specify a value of ``disabled``, you will not be able to access your instance\
+      \ metadata."
+  EC2LaunchTemplateLaunchTemplateDataInstanceMarketOptionsMarketTypel0sYZ:
+    NoEcho: "true"
+    Type: "String"
+    Description: "The market type."
+  EC2LaunchTemplateLaunchTemplateDataUserData55Tuw:
+    NoEcho: "true"
+    Type: "String"
+    Description: "The user data to make available to the instance. You must provide\
+      \ base64-encoded text. User data is limited to 16 KB. For more information,\
+      \ see [Run commands when you launch an EC2 instance with user data input](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html)\
+      \ in the *Amazon EC2 User Guide*.\n If you are creating the launch template\
+      \ for use with BATCH, the user data must be provided in the [MIME multi-part\
+      \ archive format](https://docs.aws.amazon.com/https://cloudinit.readthedocs.io/en/latest/topics/format.html#mime-multi-part-archive).\
+      \ For more information, see [Amazon EC2 user data in launch templates](https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html#lt-user-data)\
+      \ in the *User Guide*."
+  EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuMaxvmmZ0:
+    NoEcho: "true"
+    Type: "Number"
+    Description: "The maximum amount of memory per vCPU, in GiB. To specify no maximum\
+      \ limit, omit this parameter."
+  EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsOnDemandMaxPricePercentageOverLowestPriceuptJ9:
+    NoEcho: "true"
+    Type: "Number"
+    Description: "[Price protection] The price protection threshold for On-Demand\
+      \ Instances, as a percentage higher than an identified On-Demand price. The\
+      \ identified On-Demand price is the price of the lowest priced current generation\
+      \ C, M, or R instance type with your specified attributes. When Amazon EC2 selects\
+      \ instance types with your attributes, it will exclude instance types whose\
+      \ price exceeds your specified threshold.\n The parameter accepts an integer,\
+      \ which Amazon EC2 interprets as a percentage.\n To turn off price protection,\
+      \ specify a high value, such as ``999999``.\n This parameter is not supported\
+      \ for [GetSpotPlacementScores](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html)\
+      \ and [GetInstanceTypesFromInstanceRequirements](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html).\n\
+      \  If you set ``TargetCapacityUnitType`` to ``vcpu`` or ``memory-mib``, the\
+      \ price protection threshold is applied based on the per-vCPU or per-memory\
+      \ price instead of the per-instance price.\n  Default: ``20``"
+  EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuMinwV0XZ:
+    NoEcho: "true"
+    Type: "Number"
+    Description: "The minimum amount of memory per vCPU, in GiB. To specify no minimum\
+      \ limit, omit this parameter."
+  EC2LaunchTemplateLaunchTemplateDataPlacementGroupIdcRu95:
+    NoEcho: "true"
+    Type: "String"
+    Description: "The Group Id of a placement group. You must specify the Placement\
+      \ Group *Group Id* to launch an instance in a shared placement group."
+  EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsLocalStorageTypestimZv:
+    NoEcho: "true"
+    Type: "CommaDelimitedList"
+    Description: "The type of local storage that is required.\n  +  For instance types\
+      \ with hard disk drive (HDD) storage, specify ``hdd``.\n  +  For instance types\
+      \ with solid state drive (SSD) storage, specify ``ssd``.\n  \n Default: ``hdd``\
+      \ and ``ssd``"
+  EC2LaunchTemplateLaunchTemplateDataInstanceInitiatedShutdownBehavior2DvAN:
+    NoEcho: "true"
+    Type: "String"
+    Description: "Indicates whether an instance stops or terminates when you initiate\
+      \ shutdown from the instance (using the operating system command for system\
+      \ shutdown).\n Default: ``stop``"
+  EC2LaunchTemplateLaunchTemplateDataPlacementHostIdnpYui:
+    NoEcho: "true"
+    Type: "String"
+    Description: "The ID of the Dedicated Host for the instance."
+  EC2LaunchTemplateLaunchTemplateDataPrivateDnsNameOptionsEnableResourceNameDnsAAAARecordFwfs3:
+    NoEcho: "true"
+    Type: "String"
+    Description: "Indicates whether to respond to DNS queries for instance hostnames\
+      \ with DNS AAAA records."
+  EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsBareMetal9QzIJ:
+    NoEcho: "true"
+    Type: "String"
+    Description: "Indicates whether bare metal instance types must be included, excluded,\
+      \ or required.\n  +  To include bare metal instance types, specify ``included``.\n\
+      \  +  To require only bare metal instance types, specify ``required``.\n  +\
+      \  To exclude bare metal instance types, specify ``excluded``.\n  \n Default:\
+      \ ``excluded``"
+  LambdaFunctionCloudCartS3ProcessorCodeS3ObjectVersion5LGvy:
+    NoEcho: "true"
+    Type: "String"
+    Description: "For versioned objects, the version of the deployment package object\
+      \ to use."
+  EC2LaunchTemplateLaunchTemplateDataMonitoringEnabledabKbo:
+    NoEcho: "true"
+    Type: "String"
+    Description: "Specify ``true`` to enable detailed monitoring. Otherwise, basic\
+      \ monitoring is enabled."
+  LambdaFunctionCloudCartS3ProcessorCodeS3Bucketj9Il6:
+    NoEcho: "true"
+    Type: "String"
+    Description: "An Amazon S3 bucket in the same AWS-Region as your function. The\
+      \ bucket can be in a different AWS-account."
+  EC2LaunchTemplateLaunchTemplateDataInstanceMarketOptionsSpotOptionsInstanceInterruptionBehaviorLfYeM:
+    NoEcho: "true"
+    Type: "String"
+    Description: "The behavior when a Spot Instance is interrupted. The default is\
+      \ ``terminate``."
+  EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsMaxSpotPriceAsPercentageOfOptimalOnDemandPricebog7H:
+    NoEcho: "true"
+    Type: "Number"
+    Description: "[Price protection] The price protection threshold for Spot Instances,\
+      \ as a percentage of an identified On-Demand price. The identified On-Demand\
+      \ price is the price of the lowest priced current generation C, M, or R instance\
+      \ type with your specified attributes. If no current generation C, M, or R instance\
+      \ type matches your attributes, then the identified price is from the lowest\
+      \ priced current generation instance types, and failing that, from the lowest\
+      \ priced previous generation instance types that match your attributes. When\
+      \ Amazon EC2 selects instance types with your attributes, it will exclude instance\
+      \ types whose price exceeds your specified threshold.\n The parameter accepts\
+      \ an integer, which Amazon EC2 interprets as a percentage.\n If you set ``TargetCapacityUnitType``\
+      \ to ``vcpu`` or ``memory-mib``, the price protection threshold is based on\
+      \ the per vCPU or per memory price instead of the per instance price.\n  Only\
+      \ one of ``SpotMaxPricePercentageOverLowestPrice`` or ``MaxSpotPriceAsPercentageOfOptimalOnDemandPrice``\
+      \ can be specified. If you don't specify either, Amazon EC2 will automatically\
+      \ apply optimal price protection to consistently select from a wide range of\
+      \ instance types. To indicate no price protection threshold for Spot Instances,\
+      \ meaning you want to consider all instance types that match your attributes,\
+      \ include one of these parameters and specify a high value, such as ``999999``."
+  EC2LaunchTemplateLaunchTemplateDataInstanceMarketOptionsSpotOptionsSpotInstanceType20lSr:
+    NoEcho: "true"
+    Type: "String"
+    Description: "The Spot Instance request type.\n If you are using Spot Instances\
+      \ with an Auto Scaling group, use ``one-time`` requests, as the ASlong service\
+      \ handles requesting new Spot Instances whenever the group is below its desired\
+      \ capacity."
+  EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsVCpuCountMin2B4IW:
+    NoEcho: "true"
+    Type: "Number"
+    Description: "The minimum number of vCPUs. To specify no minimum limit, specify\
+      \ ``0``."
+  EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsBurstablePerformanceq6X1T:
+    NoEcho: "true"
+    Type: "String"
+    Description: "Indicates whether burstable performance T instance types are included,\
+      \ excluded, or required. For more information, see [Burstable performance instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html).\n\
+      \  +  To include burstable performance instance types, specify ``included``.\n\
+      \  +  To require only burstable performance instance types, specify ``required``.\n\
+      \  +  To exclude burstable performance instance types, specify ``excluded``.\n\
+      \  \n Default: ``excluded``"
+  EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsMin8XCq2:
+    NoEcho: "true"
+    Type: "Number"
+    Description: "The minimum baseline bandwidth, in Mbps. To specify no minimum limit,\
+      \ omit this parameter."
+  EC2LaunchTemplateLaunchTemplateDataCpuOptionsNestedVirtualizationA447b:
+    NoEcho: "true"
+    Type: "String"
+    Description: "Indicates whether the instance is enabled for nested virtualization.Possible\
+      \ values: [enabled, disabled]\nThis property can be replaced with other types"
+  EC2LaunchTemplateLaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetCapacityReservationIdbiEXM:
+    NoEcho: "true"
+    Type: "String"
+    Description: "The ID of the Capacity Reservation in which to run the instance."
+  KeyName2:
+    Default: "FinalCloudCart-EC2-B"
+    Type: "String"
+    Description: "Name of an existing EC2 KeyPair to enable SSH access"
+  LambdaFunctionCloudCartS3ProcessorCodeS3Keyejnti:
+    NoEcho: "true"
+    Type: "String"
+    Description: "The Amazon S3 key of the deployment package."
+  EC2LaunchTemplateLaunchTemplateDataRamDiskIdcUNLd:
+    NoEcho: "true"
+    Type: "String"
+    Description: "The ID of the RAM disk.\n  We recommend that you use PV-GRUB instead\
+      \ of kernels and RAM disks. For more information, see [User provided kernels](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html)\
+      \ in the *Amazon EC2 User Guide*."
+  EC2LaunchTemplateLaunchTemplateDataPlacementGroupNameUsOxd:
+    NoEcho: "true"
+    Type: "String"
+    Description: "The name of the placement group for the instance."
+  EC2LaunchTemplateLaunchTemplateDataMetadataOptionsHttpProtocolIpv6qGFnV:
+    NoEcho: "true"
+    Type: "String"
+    Description: "Enables or disables the IPv6 endpoint for the instance metadata\
+      \ service.\n Default: ``disabled``"
+  EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsAcceleratorNamesPPHBb:
+    NoEcho: "true"
+    Type: "CommaDelimitedList"
+    Description: "The accelerators that must be on the instance type.\n  +  For instance\
+      \ types with NVIDIA A10G GPUs, specify ``a10g``.\n  +  For instance types with\
+      \ NVIDIA A100 GPUs, specify ``a100``.\n  +  For instance types with NVIDIA H100\
+      \ GPUs, specify ``h100``.\n  +  For instance types with AWS Inferentia chips,\
+      \ specify ``inferentia``.\n  +  For instance types with AWS Inferentia2 chips,\
+      \ specify ``inferentia2``.\n  +  For instance types with Habana Gaudi HL-205\
+      \ GPUs, specify ``gaudi-hl-205``.\n  +  For instance types with NVIDIA GRID\
+      \ K520 GPUs, specify ``k520``.\n  +  For instance types with NVIDIA K80 GPUs,\
+      \ specify ``k80``.\n  +  For instance types with NVIDIA L4 GPUs, specify ``l4``.\n\
+      \  +  For instance types with NVIDIA L40S GPUs, specify ``l40s``.\n  +  For\
+      \ instance types with NVIDIA M60 GPUs, specify ``m60``.\n  +  For instance types\
+      \ with AMD Radeon Pro V520 GPUs, specify ``radeon-pro-v520``.\n  +  For instance\
+      \ types with AWS Trainium chips, specify ``trainium``.\n  +  For instance types\
+      \ with AWS Trainium2 chips, specify ``trainium2``.\n  +  For instance types\
+      \ with NVIDIA T4 GPUs, specify ``t4``.\n  +  For instance types with NVIDIA\
+      \ T4G GPUs, specify ``t4g``.\n  +  For instance types with Xilinx U30 cards,\
+      \ specify ``u30``.\n  +  For instance types with Xilinx VU9P FPGAs, specify\
+      \ ``vu9p``.\n  +  For instance types with NVIDIA V100 GPUs, specify ``v100``.\n\
+      \  \n Default: Any accelerator"
+  EC2LaunchTemplateLaunchTemplateDataIamInstanceProfileNamewWwC5:
+    NoEcho: "true"
+    Type: "String"
+    Description: "The name of the instance profile."
+  EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsAcceleratorCountMaxRtleR:
+    NoEcho: "true"
+    Type: "Number"
+    Description: "The maximum number of accelerators. To specify no maximum limit,\
+      \ omit this parameter. To exclude accelerator-enabled instance types, set ``Max``\
+      \ to ``0``."
+  EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsExcludedInstanceTypes2KfcX:
+    NoEcho: "true"
+    Type: "CommaDelimitedList"
+    Description: "The instance types to exclude.\n You can use strings with one or\
+      \ more wild cards, represented by an asterisk (``*``), to exclude an instance\
+      \ type, size, or generation. The following are examples: ``m5.8xlarge``, ``c5*.*``,\
+      \ ``m5a.*``, ``r*``, ``*3*``.\n For example, if you specify ``c5*``,Amazon EC2\
+      \ will exclude the entire C5 instance family, which includes all C5a and C5n\
+      \ instance types. If you specify ``m5a.*``, Amazon EC2 will exclude all the\
+      \ M5a instance types, but not the M5n instance types.\n  If you specify ``ExcludedInstanceTypes``,\
+      \ you can't specify ``AllowedInstanceTypes``.\n  Default: No excluded instance\
+      \ types"
+  EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsVCpuCountMaxpZgg1:
+    NoEcho: "true"
+    Type: "Number"
+    Description: "The maximum number of vCPUs. To specify no maximum limit, omit this\
+      \ parameter."
+  EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsInstanceGenerationsHW9xc:
+    NoEcho: "true"
+    Type: "CommaDelimitedList"
+    Description: "Indicates whether current or previous generation instance types\
+      \ are included. The current generation instance types are recommended for use.\
+      \ Current generation instance types are typically the latest two to three generations\
+      \ in each instance family. For more information, see [Instance types](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html)\
+      \ in the *Amazon EC2 User Guide*.\n For current generation instance types, specify\
+      \ ``current``.\n For previous generation instance types, specify ``previous``.\n\
+      \ Default: Current and previous generation instance types"
+  EC2LaunchTemplateLaunchTemplateDataMetadataOptionsHttpPutResponseHopLimitNcPNC:
+    NoEcho: "true"
+    Type: "Number"
+    Description: "The desired HTTP PUT response hop limit for instance metadata requests.\
+      \ The larger the number, the further instance metadata requests can travel.\n\
+      \ Default: ``1``\n Possible values: Integers from 1 to 64"
+  EC2LaunchTemplateLaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetCapacityReservationResourceGroupArnpOLhy:
+    NoEcho: "true"
+    Type: "String"
+    Description: "The ARN of the Capacity Reservation resource group in which to run\
+      \ the instance."
+  EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsMemoryMiBMinWq3xi:
+    NoEcho: "true"
+    Type: "Number"
+    Description: "The minimum amount of memory, in MiB. To specify no minimum limit,\
+      \ specify ``0``."
+  EC2LaunchTemplateLaunchTemplateDataNetworkPerformanceOptionsBandwidthWeightingrmOW2:
+    NoEcho: "true"
+    Type: "String"
+    Description: "Specify the bandwidth weighting option to boost the associated type\
+      \ of baseline bandwidth, as follows:\n  + default This option uses the standard\
+      \ bandwidth configuration for your instance type. + vpc-1 This option boosts\
+      \ your networking baseline bandwidth and reduces your EBS baseline bandwidth.\
+      \ + ebs-1 This option boosts your EBS baseline bandwidth and reduces your networking\
+      \ baseline bandwidth."
+  EC2LaunchTemplateLaunchTemplateDataKeyNameHVHGI:
+    NoEcho: "true"
+    Type: "String"
+    Description: "The name of the key pair. You can create a key pair using [CreateKeyPair](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateKeyPair.html)\
+      \ or [ImportKeyPair](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportKeyPair.html).\n\
+      \  If you do not specify a key pair, you can't connect to the instance unless\
+      \ you choose an AMI that is configured to allow users another way to log in."
+  EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsMaxaseE5:
+    NoEcho: "true"
+    Type: "Number"
+    Description: "The maximum baseline bandwidth, in Mbps. To specify no maximum limit,\
+      \ omit this parameter."
+  EC2LaunchTemplateLaunchTemplateDataPlacementAvailabilityZone0PKq8:
+    NoEcho: "true"
+    Type: "String"
+    Description: "The Availability Zone for the instance.\n Either ``AvailabilityZone``\
+      \ or ``AvailabilityZoneId`` can be specified, but not both"
+  EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsAcceleratorCountMinN9MIb:
+    NoEcho: "true"
+    Type: "Number"
+    Description: "The minimum number of accelerators. To specify no minimum limit,\
+      \ omit this parameter."
+  EC2LaunchTemplateLaunchTemplateDataMetadataOptionsHttpTokensgNy9B:
+    NoEcho: "true"
+    Type: "String"
+    Description: "Indicates whether IMDSv2 is required.\n  +  ``optional`` - IMDSv2\
+      \ is optional. You can choose whether to send a session token in your instance\
+      \ metadata retrieval requests. If you retrieve IAM role credentials without\
+      \ a session token, you receive the IMDSv1 role credentials. If you retrieve\
+      \ IAM role credentials using a valid session token, you receive the IMDSv2 role\
+      \ credentials.\n  +  ``required`` - IMDSv2 is required. You must send a session\
+      \ token in your instance metadata retrieval requests. With this option, retrieving\
+      \ the IAM role credentials always returns IMDSv2 credentials; IMDSv1 credentials\
+      \ are not available.\n  \n Default: If the value of ``ImdsSupport`` for the\
+      \ Amazon Machine Image (AMI) for your instance is ``v2.0``, the default is ``required``."
+  EC2LaunchTemplateLaunchTemplateDataDisableApiTerminationIMpzm:
+    NoEcho: "true"
+    Type: "String"
+    Description: "Indicates whether termination protection is enabled for the instance.\
+      \ The default is ``false``, which means that you can terminate the instance\
+      \ using the Amazon EC2 console, command line tools, or API. You can enable termination\
+      \ protection when you launch an instance, while the instance is running, or\
+      \ while the instance is stopped."
+  EC2LaunchTemplateLaunchTemplateDataInstanceMarketOptionsSpotOptionsBlockDurationMinuteswsvc1:
+    NoEcho: "true"
+    Type: "Number"
+    Description: "Deprecated."
+  EC2LaunchTemplateLaunchTemplateDataCpuOptionsCoreCountqHu3e:
+    NoEcho: "true"
+    Type: "Number"
+    Description: "The number of CPU cores for the instance."
+  EC2LaunchTemplateLaunchTemplateDataPlacementAffinityzSOwu:
+    NoEcho: "true"
+    Type: "String"
+    Description: "The affinity setting for an instance on a Dedicated Host."
+  EC2LaunchTemplateLaunchTemplateDataInstanceMarketOptionsSpotOptionsValidUntil4KOoz:
+    NoEcho: "true"
+    Type: "String"
+    Description: "The end date of the request, in UTC format (*YYYY-MM-DD*T*HH:MM:SS*Z).\
+      \ Supported only for persistent requests.\n  +  For a persistent request, the\
+      \ request remains active until the ``ValidUntil`` date and time is reached.\
+      \ Otherwise, the request remains active until you cancel it.\n  +  For a one-time\
+      \ request, ``ValidUntil`` is not supported. The request remains active until\
+      \ all instances launch or you cancel the request.\n  \n Default: 7 days from\
+      \ the current date"
+  EC2LaunchTemplateLaunchTemplateDataInstanceTypeOVXis:
+    NoEcho: "true"
+    Type: "String"
+    Description: "The instance type. For more information, see [Amazon EC2 instance\
+      \ types](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html)\
+      \ in the *Amazon EC2 User Guide*.\n If you specify ``InstanceType``, you can't\
+      \ specify ``InstanceRequirements``."
+  EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsAcceleratorTypesjQWrj:
+    NoEcho: "true"
+    Type: "CommaDelimitedList"
+    Description: "The accelerator types that must be on the instance type.\n  +  For\
+      \ instance types with FPGA accelerators, specify ``fpga``.\n  +  For instance\
+      \ types with GPU accelerators, specify ``gpu``.\n  +  For instance types with\
+      \ Inference accelerators, specify ``inference``.\n  +  For instance types with\
+      \ Media accelerators, specify ``media``.\n  \n Default: Any accelerator type"
+  EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsTotalLocalStorageGBMax2Plca:
+    NoEcho: "true"
+    Type: "Number"
+    Description: "The maximum amount of total local storage, in GB. To specify no\
+      \ maximum limit, omit this parameter."
+  EC2LaunchTemplateLaunchTemplateDataCreditSpecificationCpuCreditsbO1kx:
+    NoEcho: "true"
+    Type: "String"
+    Description: "The credit option for CPU usage of a T instance.\n Valid values:\
+      \ ``standard`` | ``unlimited``"
+  EC2LaunchTemplateLaunchTemplateDataCapacityReservationSpecificationCapacityReservationPreferencenXgny:
+    NoEcho: "true"
+    Type: "String"
+    Description: "Indicates the instance's Capacity Reservation preferences. Possible\
+      \ preferences include:\n  +  ``capacity-reservations-only`` - The instance will\
+      \ only run in a Capacity Reservation or Capacity Reservation group. If capacity\
+      \ isn't available, the instance will fail to launch.\n  +  ``open`` - The instance\
+      \ can run in any ``open`` Capacity Reservation that has matching attributes\
+      \ (instance type, platform, Availability Zone, tenancy).\n  +  ``none`` - The\
+      \ instance avoids running in a Capacity Reservation even if one is available.\
+      \ The instance runs in On-Demand capacity."
+  EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsNetworkBandwidthGbpsMax76f0Y:
+    NoEcho: "true"
+    Type: "Number"
+    Description: "The maximum amount of network bandwidth, in Gbps. To specify no\
+      \ maximum limit, omit this parameter."
+  EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsAcceleratorManufacturersrhFBs:
+    NoEcho: "true"
+    Type: "CommaDelimitedList"
+    Description: "Indicates whether instance types must have accelerators by specific\
+      \ manufacturers.\n  +  For instance types with AWS devices, specify ``amazon-web-services``.\n\
+      \  +  For instance types with AMD devices, specify ``amd``.\n  +  For instance\
+      \ types with Habana devices, specify ``habana``.\n  +  For instance types with\
+      \ NVIDIA devices, specify ``nvidia``.\n  +  For instance types with Xilinx devices,\
+      \ specify ``xilinx``.\n  \n Default: Any manufacturer"
+  EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsNetworkInterfaceCountMinqydvo:
+    NoEcho: "true"
+    Type: "Number"
+    Description: "The minimum number of network interfaces. To specify no minimum\
+      \ limit, omit this parameter."
+  EC2LaunchTemplateLaunchTemplateDataInstanceMarketOptionsSpotOptionsMaxPriceFhpbU:
+    NoEcho: "true"
+    Type: "String"
+    Description: "The maximum hourly price you're willing to pay for a Spot Instance.\
+      \ We do not recommend using this parameter because it can lead to increased\
+      \ interruptions. If you do not specify this parameter, you will pay the current\
+      \ Spot price. If you do specify this parameter, it must be more than USD $0.001.\
+      \ Specifying a value below USD $0.001 will result in an ``InvalidParameterValue``\
+      \ error message when the launch template is used to launch an instance.\n  If\
+      \ you specify a maximum price, your Spot Instances will be interrupted more\
+      \ frequently than if you do not specify this parameter."
+  EC2LaunchTemplateLaunchTemplateDataDisableApiStopktOFt:
+    NoEcho: "true"
+    Type: "String"
+    Description: "Indicates whether to enable the instance for stop protection. For\
+      \ more information, see [Enable stop protection for your EC2 instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-stop-protection.html)\
+      \ in the *Amazon EC2 User Guide*."
+  EC2LaunchTemplateLaunchTemplateDataPlacementSpreadDomain0l0ph:
+    NoEcho: "true"
+    Type: "String"
+    Description: "Reserved for future use."
+  EC2LaunchTemplateLaunchTemplateDataKernelIdnhctl:
+    NoEcho: "true"
+    Type: "String"
+    Description: "The ID of the kernel.\n We recommend that you use PV-GRUB instead\
+      \ of kernels and RAM disks. For more information, see [User Provided Kernels](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html)\
+      \ in the *Amazon EC2 User Guide*."
+  KeyName:
+    Default: "Final-CloudCart-EC2-A"
+    Type: "String"
+    Description: "Name of an existing EC2 KeyPair to enable SSH access"
+  EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsMemoryMiBMaxpTEtM:
+    NoEcho: "true"
+    Type: "Number"
+    Description: "The maximum amount of memory, in MiB. To specify no maximum limit,\
+      \ omit this parameter."
+  EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsLocalStorageKOjSI:
+    NoEcho: "true"
+    Type: "String"
+    Description: "Indicates whether instance types with instance store volumes are\
+      \ included, excluded, or required. For more information, [Amazon EC2 instance\
+      \ store](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html)\
+      \ in the *Amazon EC2 User Guide*.\n  +  To include instance types with instance\
+      \ store volumes, specify ``included``.\n  +  To require only instance types\
+      \ with instance store volumes, specify ``required``.\n  +  To exclude instance\
+      \ types with instance store volumes, specify ``excluded``.\n  \n Default: ``included``"
+  EC2LaunchTemplateLaunchTemplateDataCpuOptionsAmdSevSnpVYbrt:
+    NoEcho: "true"
+    Type: "String"
+    Description: "Indicates whether to enable the instance for AMD SEV-SNP. AMD SEV-SNP\
+      \ is supported with M6a, R6a, and C6a instance types only. For more information,\
+      \ see [AMD SEV-SNP for Amazon EC2 instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html).Possible\
+      \ values: [enabled, disabled]\nThis property can be replaced with other types"
+  EC2LaunchTemplateLaunchTemplateDataIamInstanceProfileArn5Z9iq:
+    NoEcho: "true"
+    Type: "String"
+    Description: "The Amazon Resource Name (ARN) of the instance profile."
+  EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsRequireHibernateSupportsuUSK:
+    NoEcho: "true"
+    Type: "String"
+    Description: "Indicates whether instance types must support hibernation for On-Demand\
+      \ Instances.\n This parameter is not supported for [GetSpotPlacementScores](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html).\n\
+      \ Default: ``false``"
+  LambdaFunctionCloudCartS3ProcessorCodeImageUrirNw9K:
+    NoEcho: "true"
+    Type: "String"
+    Description: "URI of a [container image](https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html)\
+      \ in the Amazon ECR registry."
+  EC2LaunchTemplateLaunchTemplateDataPrivateDnsNameOptionsHostnameTypeRw70B:
+    NoEcho: "true"
+    Type: "String"
+    Description: "The type of hostname for EC2 instances. For IPv4 only subnets, an\
+      \ instance DNS name must be based on the instance IPv4 address. For IPv6 only\
+      \ subnets, an instance DNS name must be based on the instance ID. For dual-stack\
+      \ subnets, you can specify whether DNS names use the instance IPv4 address or\
+      \ the instance ID. For more information, see [Amazon EC2 instance hostname types](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-naming.html)\
+      \ in the *User Guide*."
+  EC2LaunchTemplateLaunchTemplateDataSecurityGroupsyCokh:
+    NoEcho: "true"
+    Type: "CommaDelimitedList"
+    Description: "The names of the security groups. For a nondefault VPC, you must\
+      \ use security group IDs instead.\n If you specify a network interface, you\
+      \ must specify any security groups as part of the network interface instead\
+      \ of using this parameter."
+  EC2LaunchTemplateLaunchTemplateDataMetadataOptionsInstanceMetadataTagsBWVg2:
+    NoEcho: "true"
+    Type: "String"
+    Description: "Set to ``enabled`` to allow access to instance tags from the instance\
+      \ metadata. Set to ``disabled`` to turn off access to instance tags from the\
+      \ instance metadata. For more information, see [View tags for your EC2 instances\
+      \ using instance metadata](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/work-with-tags-in-IMDS.html).\n\
+      \ Default: ``disabled``"
+  EC2LaunchTemplateLaunchTemplateDataPrivateDnsNameOptionsEnableResourceNameDnsARecordEAzbK:
+    NoEcho: "true"
+    Type: "String"
+    Description: "Indicates whether to respond to DNS queries for instance hostnames\
+      \ with DNS A records."
+  EC2LaunchTemplateLaunchTemplateDataSecurityGroupIdsKUp9t:
+    NoEcho: "true"
+    Type: "CommaDelimitedList"
+    Description: "The IDs of the security groups. You can specify the IDs of existing\
+      \ security groups and references to resources created by the stack template.\n\
+      \ If you specify a network interface, you must specify any security groups as\
+      \ part of the network interface instead."
+  EC2LaunchTemplateLaunchTemplateDataPlacementHostResourceGroupArncqS1n:
+    NoEcho: "true"
+    Type: "String"
+    Description: "The ARN of the host resource group in which to launch the instances.\
+      \ If you specify a host resource group ARN, omit the *Tenancy* parameter or\
+      \ set it to ``host``."
+  EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsSpotMaxPricePercentageOverLowestPriceyooJW:
+    NoEcho: "true"
+    Type: "Number"
+    Description: "[Price protection] The price protection threshold for Spot Instances,\
+      \ as a percentage higher than an identified Spot price. The identified Spot\
+      \ price is the Spot price of the lowest priced current generation C, M, or R\
+      \ instance type with your specified attributes. If no current generation C,\
+      \ M, or R instance type matches your attributes, then the identified Spot price\
+      \ is from the lowest priced current generation instance types, and failing that,\
+      \ from the lowest priced previous generation instance types that match your\
+      \ attributes. When Amazon EC2 selects instance types with your attributes, it\
+      \ will exclude instance types whose Spot price exceeds your specified threshold.\n\
+      \ The parameter accepts an integer, which Amazon EC2 interprets as a percentage.\n\
+      \ If you set ``TargetCapacityUnitType`` to ``vcpu`` or ``memory-mib``, the price\
+      \ protection threshold is applied based on the per-vCPU or per-memory price\
+      \ instead of the per-instance price.\n This parameter is not supported for [GetSpotPlacementScores](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html)\
+      \ and [GetInstanceTypesFromInstanceRequirements](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html).\n\
+      \  Only one of ``SpotMaxPricePercentageOverLowestPrice`` or ``MaxSpotPriceAsPercentageOfOptimalOnDemandPrice``\
+      \ can be specified. If you don't specify either, Amazon EC2 will automatically\
+      \ apply optimal price protection to consistently select from a wide range of\
+      \ instance types. To indicate no price protection threshold for Spot Instances,\
+      \ meaning you want to consider all instance types that match your attributes,\
+      \ include one of these parameters and specify a high value, such as ``999999``.\n\
+      \  Default: ``100``"
+  EC2LaunchTemplateLaunchTemplateDataMaintenanceOptionsAutoRecoverybltxC:
+    NoEcho: "true"
+    Type: "String"
+    Description: "Disables the automatic recovery behavior of your instance or sets\
+      \ it to default."
+Resources:
+  EC2VPCGatewayAttachmentIGW:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::VPCGatewayAttachment"
+    DeletionPolicy: "Retain"
+    Properties:
+      InternetGatewayId: "igw-070f1a9ce340610a9"
+      VpcId: "vpc-02d7018274ab0f022"
+  EC2InstanceQt:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Instance"
+    DeletionPolicy: "Retain"
+    Properties:
+      Tenancy: "default"
+      PrivateIpAddress: "192.168.1.218"
+      MetadataOptions:
+        HttpPutResponseHopLimit: 2
+        HttpProtocolIpv6: "disabled"
+        HttpTokens: "required"
+        InstanceMetadataTags: "disabled"
+        HttpEndpoint: "enabled"
+      UserData: "IyEvYmluL2Jhc2gKZG5mIHVwZGF0ZSAteQpkbmYgaW5zdGFsbCAteSBodHRwZApzeXN0ZW1jdGwgc3RhcnQgaHR0cGQKc3lzdGVtY3RsIGVuYWJsZSBodHRwZAoKZWNobyAiPGgxPkhlbGxvIGZyb20gQ2xvdWRDYXJ0IEVDMi1CPC9oMT4iID4gL3Zhci93d3cvaHRtbC9pbmRleC5odG1s"
+      InstanceInitiatedShutdownBehavior: "stop"
+      BlockDeviceMappings:
+      - Ebs:
+          SnapshotId: "snap-0bc9cf3f9e4893b60"
+          VolumeType: "gp3"
+          Iops: 3000
+          VolumeSize: 8
+          Encrypted: false
+          DeleteOnTermination: true
+        DeviceName: "/dev/xvda"
+      - Ebs:
+          SnapshotId: ""
+          VolumeType: "gp3"
+          Iops: 3000
+          VolumeSize: 10
+          Encrypted: false
+          DeleteOnTermination: false
+        DeviceName: "/dev/sdf"
+      PrivateDnsNameOptions:
+        EnableResourceNameDnsARecord: false
+        HostnameType: "ip-name"
+        EnableResourceNameDnsAAAARecord: false
+      SecurityGroupIds:
+      - "sg-02e6ff0fdc04c308e"
+      EbsOptimized: true
+      DisableApiTermination: false
+      SourceDestCheck: true
+      PlacementGroupName: ""
+      NetworkInterfaces:
+      - Ipv6Addresses: []
+        SecondaryPrivateIpAddressCount: 0
+        NetworkInterfaceId: "eni-0dadf8e35cf8ebdd0"
+        DeviceIndex: "0"
+      ImageId: "ami-0332d564d76dbd8d6"
+      InstanceType: "t3.micro"
+      Monitoring: false
+      Tags:
+      - Value: "CloudCart-EC2-B"
+        Key: "Name"
+      CreditSpecification:
+        CPUCredits: "unlimited"
+  EC2RouteNt:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Route"
+    DeletionPolicy: "Retain"
+    Properties:
+      GatewayId: "igw-070f1a9ce340610a9"
+      RouteTableId: "rtb-0cf2853659269904c"
+      DestinationCidrBlock: "0.0.0.0/0"
+  EC2VolumeAttachmentRB:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::VolumeAttachment"
+    DeletionPolicy: "Retain"
+    Properties:
+      VolumeId: "vol-0afe47d93529f75e9"
+      InstanceId: "i-0d8cd7f84fe21f319"
+      Device: "/dev/xvda"
+      EbsCardIndex: 0
+  EC2VolumeV1:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Volume"
+    DeletionPolicy: "Retain"
+    Properties:
+      MultiAttachEnabled: false
+      VolumeType: "gp3"
+      Encrypted: false
+      Size: 10
+      AutoEnableIO: false
+      AvailabilityZoneId: "use1-az2"
+      AvailabilityZone: "us-east-1b"
+      Throughput: 125
+      Iops: 3000
+      Tags:
+      - Value: "CloudCart-EBS-B"
+        Key: "Name"
+  EC2SubnetG9:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Subnet"
+    DeletionPolicy: "Retain"
+    Properties:
+      MapPublicIpOnLaunch: false
+      EnableDns64: false
+      VpcId: "vpc-09e19e479da163d21"
+      AvailabilityZoneId: "use1-az1"
+      PrivateDnsNameOptionsOnLaunch:
+        EnableResourceNameDnsARecord: false
+        HostnameType: "ip-name"
+        EnableResourceNameDnsAAAARecord: false
+      AvailabilityZone: "us-east-1a"
+      CidrBlock: "192.168.1.64/27"
+      Ipv6Native: false
+      Tags:
+      - Value: "Private-App-A"
+        Key: "Name"
+  S3BucketCloudcartesraafiles2026:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::S3::Bucket"
+    DeletionPolicy: "Retain"
+    Properties:
+      AbacStatus: "Disabled"
+      PublicAccessBlockConfiguration:
+        RestrictPublicBuckets: true
+        IgnorePublicAcls: true
+        BlockPublicPolicy: true
+        BlockPublicAcls: true
+      BucketName: "cloudcart-esraa-files-2026"
+      OwnershipControls:
+        Rules:
+        - ObjectOwnership: "BucketOwnerEnforced"
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+        - BucketKeyEnabled: true
+          BlockedEncryptionTypes:
+            EncryptionType:
+            - "SSE-C"
+          ServerSideEncryptionByDefault:
+            SSEAlgorithm: "AES256"
+      NotificationConfiguration:
+        QueueConfigurations: []
+        TopicConfigurations: []
+        LambdaConfigurations:
+        - Function: "arn:aws:lambda:us-east-1:294427322944:function:CloudCart-S3-Processor"
+          Event: "s3:ObjectCreated:*"
+      Tags:
+      - Value: "CloudCart-S3"
+        Key: "Name"
+  SNSSubscriptionCloudCartNotifications477b578bef0f43888211fd22a9d4e7f5:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::SNS::Subscription"
+    DeletionPolicy: "Retain"
+    Properties:
+      RawMessageDelivery: false
+      Endpoint: "esraasamir118881@gmail.com"
+      TopicArn: "arn:aws:sns:us-east-1:294427322944:CloudCart-Notifications"
+      Protocol: "email"
+  EC2RouteG9:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Route"
+    DeletionPolicy: "Retain"
+    Properties:
+      GatewayId: "igw-05c1582815e0e9a16"
+      RouteTableId: "rtb-0e0a2e19bc028f185"
+      DestinationCidrBlock: "0.0.0.0/0"
+  IAMInstanceProfileCloudCartEC2SSMRole:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::IAM::InstanceProfile"
+    DeletionPolicy: "Retain"
+    Properties:
+      Path: "/"
+      Roles:
+      - "CloudCart-EC2-SSM-Role"
+      InstanceProfileName: "CloudCart-EC2-SSM-Role"
+  EC2SubnetCH:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Subnet"
+    DeletionPolicy: "Retain"
+    Properties:
+      MapPublicIpOnLaunch: false
+      EnableDns64: false
+      VpcId: "vpc-09e19e479da163d21"
+      AvailabilityZoneId: "use1-az2"
+      PrivateDnsNameOptionsOnLaunch:
+        EnableResourceNameDnsARecord: false
+        HostnameType: "ip-name"
+        EnableResourceNameDnsAAAARecord: false
+      AvailabilityZone: "us-east-1b"
+      CidrBlock: "192.168.1.32/27"
+      Ipv6Native: false
+      Tags:
+      - Value: "Public-B-ALB"
+        Key: "Name"
+  CloudWatchAlarmTargetTrackingCloudCartASGAlarmLow89d5fb0c522a4e0bb14d6bb47e3574e3:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::CloudWatch::Alarm"
+    DeletionPolicy: "Retain"
+    Properties:
+      ComparisonOperator: "LessThanThreshold"
+      Dimensions:
+      - Value: "CloudCart-ASG"
+        Name: "AutoScalingGroupName"
+      Period: 60
+      EvaluationPeriods: 15
+      Namespace: "AWS/EC2"
+      OKActions: []
+      AlarmActions:
+      - "arn:aws:autoscaling:us-east-1:294427322944:scalingPolicy:e12e6949-a2ac-483e-af12-41f79f5a34b5:autoScalingGroupName/CloudCart-ASG:policyName/CloudCart-CPU-Scaling"
+      MetricName: "CPUUtilization"
+      ActionsEnabled: true
+      AlarmDescription: "DO NOT EDIT OR DELETE. For TargetTrackingScaling policy arn:aws:autoscaling:us-east-1:294427322944:scalingPolicy:e12e6949-a2ac-483e-af12-41f79f5a34b5:autoScalingGroupName/CloudCart-ASG:policyName/CloudCart-CPU-Scaling."
+      AlarmName: "TargetTracking-CloudCart-ASG-AlarmLow-89d5fb0c-522a-4e0b-b14d-6bb47e3574e3"
+      Statistic: "Average"
+      InsufficientDataActions: []
+      Tags: []
+      Threshold: 35
+  EC2Instance:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Instance"
+    DeletionPolicy: "Retain"
+    Properties:
+      Tenancy: "default"
+      PrivateIpAddress: "192.168.1.87"
+      MetadataOptions:
+        HttpPutResponseHopLimit: 2
+        HttpProtocolIpv6: "disabled"
+        HttpTokens: "required"
+        InstanceMetadataTags: "disabled"
+        HttpEndpoint: "enabled"
+      UserData: "IyEvYmluL2Jhc2gKZG5mIHVwZGF0ZSAteQpkbmYgaW5zdGFsbCAteSBodHRwZApzeXN0ZW1jdGwgc3RhcnQgaHR0cGQKc3lzdGVtY3RsIGVuYWJsZSBodHRwZAoKZWNobyAiPGgxPkhlbGxvIGZyb20gQ2xvdWRDYXJ0IEVDMi1BPC9oMT4iID4gL3Zhci93d3cvaHRtbC9pbmRleC5odG1s"
+      InstanceInitiatedShutdownBehavior: "stop"
+      BlockDeviceMappings:
+      - Ebs:
+          SnapshotId: ""
+          VolumeType: "gp3"
+          Iops: 3000
+          VolumeSize: 10
+          Encrypted: false
+          DeleteOnTermination: false
+        DeviceName: "/dev/sdf"
+      - Ebs:
+          SnapshotId: "snap-0bc9cf3f9e4893b60"
+          VolumeType: "gp3"
+          Iops: 3000
+          VolumeSize: 8
+          Encrypted: false
+          DeleteOnTermination: true
+        DeviceName: "/dev/xvda"
+      PrivateDnsNameOptions:
+        EnableResourceNameDnsARecord: false
+        HostnameType: "ip-name"
+        EnableResourceNameDnsAAAARecord: false
+      SecurityGroupIds:
+      - "sg-02e6ff0fdc04c308e"
+      EbsOptimized: true
+      DisableApiTermination: false
+      SourceDestCheck: true
+      PlacementGroupName: ""
+      NetworkInterfaces:
+      - Ipv6Addresses: []
+        SecondaryPrivateIpAddressCount: 0
+        NetworkInterfaceId: "eni-0b243e8abfc76db03"
+        DeviceIndex: "0"
+      ImageId: "ami-0332d564d76dbd8d6"
+      InstanceType: "t3.micro"
+      Monitoring: false
+      Tags:
+      - Value: "CloudCart-EC2-A"
+        Key: "Name"
+      CreditSpecification:
+        CPUCredits: "unlimited"
+  IAMManagedPolicyPolicyserviceroleAWSLambdaBasicExecutionRole560022d370a24312a27c6441976cd939:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::IAM::ManagedPolicy"
+    DeletionPolicy: "Retain"
+    Properties:
+      ManagedPolicyName: "AWSLambdaBasicExecutionRole-560022d3-70a2-4312-a27c-6441976cd939"
+      Path: "/service-role/"
+      Description: ""
+      Groups: []
+      PolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+        - Resource: "arn:aws:logs:us-east-1:294427322944:*"
+          Action: "logs:CreateLogGroup"
+          Effect: "Allow"
+        - Resource:
+          - "arn:aws:logs:us-east-1:294427322944:log-group:/aws/lambda/CloudCart-S3-Processor:*"
+          Action:
+          - "logs:CreateLogStream"
+          - "logs:PutLogEvents"
+          Effect: "Allow"
+      Roles:
+      - "CloudCart-S3-Processor-role-vblgaah0"
+      Users: []
+  EC2SecurityGroupRo:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::SecurityGroup"
+    DeletionPolicy: "Retain"
+    Properties:
+      GroupDescription: "Allow NFS access from CloudCart EC2 instances"
+      GroupName: "CloudCart-EFS-SG"
+      VpcId: "vpc-09e19e479da163d21"
+      SecurityGroupIngress:
+      - IpProtocol: "tcp"
+        FromPort: 2049
+        SourceSecurityGroupId: "sg-02e6ff0fdc04c308e"
+        ToPort: 2049
+        SourceSecurityGroupOwnerId: "294427322944"
+      SecurityGroupEgress:
+      - CidrIp: "0.0.0.0/0"
+        IpProtocol: "-1"
+      Tags:
+      - Value: "CloudCart-EFS-SG"
+        Key: "Name"
+  EC2Route:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Route"
+    DeletionPolicy: "Retain"
+    Properties:
+      GatewayId: "igw-05c1582815e0e9a16"
+      RouteTableId: "rtb-0869acfbba4b73d3d"
+      DestinationCidrBlock: "0.0.0.0/0"
+  EC2SubnetHw:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Subnet"
+    DeletionPolicy: "Retain"
+    Properties:
+      MapPublicIpOnLaunch: false
+      EnableDns64: false
+      VpcId: "vpc-09e19e479da163d21"
+      AvailabilityZoneId: "use1-az1"
+      PrivateDnsNameOptionsOnLaunch:
+        EnableResourceNameDnsARecord: false
+        HostnameType: "ip-name"
+        EnableResourceNameDnsAAAARecord: false
+      AvailabilityZone: "us-east-1a"
+      CidrBlock: "192.168.1.128/27"
+      Ipv6Native: false
+      Tags:
+      - Value: "Private-Data-A"
+        Key: "Name"
+  ElasticLoadBalancingV2LoadBalancerLoadbalancerappCloudCartALBd3616f8e6bdc26bb:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::ElasticLoadBalancingV2::LoadBalancer"
+    DeletionPolicy: "Retain"
+    Properties:
+      IpAddressType: "ipv4"
+      SecurityGroups:
+      - "sg-06eb9fd2d793e29fd"
+      LoadBalancerAttributes:
+      - Value: ""
+        Key: "access_logs.s3.prefix"
+      - Value: "append"
+        Key: "routing.http.xff_header_processing.mode"
+      - Value: "true"
+        Key: "routing.http2.enabled"
+      - Value: "false"
+        Key: "waf.fail_open.enabled"
+      - Value: ""
+        Key: "connection_logs.s3.bucket"
+      - Value: "false"
+        Key: "access_logs.s3.enabled"
+      - Value: "false"
+        Key: "zonal_shift.config.enabled"
+      - Value: "defensive"
+        Key: "routing.http.desync_mitigation_mode"
+      - Value: ""
+        Key: "connection_logs.s3.prefix"
+      - Value: ""
+        Key: "health_check_logs.s3.prefix"
+      - Value: "false"
+        Key: "routing.http.x_amzn_tls_version_and_cipher_suite.enabled"
+      - Value: "false"
+        Key: "routing.http.preserve_host_header.enabled"
+      - Value: "true"
+        Key: "load_balancing.cross_zone.enabled"
+      - Value: "false"
+        Key: "health_check_logs.s3.enabled"
+      - Value: ""
+        Key: "health_check_logs.s3.bucket"
+      - Value: "false"
+        Key: "routing.http.xff_client_port.enabled"
+      - Value: ""
+        Key: "access_logs.s3.bucket"
+      - Value: "false"
+        Key: "deletion_protection.enabled"
+      - Value: "3600"
+        Key: "client_keep_alive.seconds"
+      - Value: "false"
+        Key: "routing.http.drop_invalid_header_fields.enabled"
+      - Value: "false"
+        Key: "connection_logs.s3.enabled"
+      - Value: "60"
+        Key: "idle_timeout.timeout_seconds"
+      Subnets:
+      - "subnet-04f44d893b305d1ee"
+      - "subnet-0247fad95076e3dd8"
+      Type: "application"
+      Scheme: "internet-facing"
+      EnablePrefixForIpv6SourceNat: "off"
+      Tags: []
+      Name: "CloudCart-ALB"
+      SubnetMappings:
+      - SubnetId: "subnet-0247fad95076e3dd8"
+      - SubnetId: "subnet-04f44d893b305d1ee"
+  EC2VPCSG:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::VPC"
+    DeletionPolicy: "Retain"
+    Properties:
+      CidrBlock: "192.168.1.0/24"
+      EnableDnsSupport: true
+      InstanceTenancy: "default"
+      EnableDnsHostnames: false
+      Tags:
+      - Value: "CloudCart-VPC"
+        Key: "Name"
+  KMSKey:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::KMS::Key"
+    DeletionPolicy: "Retain"
+    Properties:
+      Origin: "AWS_KMS"
+      MultiRegion: false
+      Description: "Default key that protects my EFS filesystems when no other key\
+        \ is defined"
+      KeyPolicy:
+        Version: "2012-10-17"
+        Statement:
+        - Condition:
+            StringEquals:
+              kms:CallerAccount: "294427322944"
+              kms:ViaService: "elasticfilesystem.us-east-1.amazonaws.com"
+          Resource: "*"
+          Action:
+          - "kms:Encrypt"
+          - "kms:Decrypt"
+          - "kms:ReEncrypt*"
+          - "kms:GenerateDataKey*"
+          - "kms:CreateGrant"
+          - "kms:DescribeKey"
+          Effect: "Allow"
+          Principal:
+            AWS: "*"
+          Sid: "Allow access to EFS for all principals in the account that are authorized\
+            \ to use EFS"
+        - Resource: "*"
+          Action:
+          - "kms:Describe*"
+          - "kms:Get*"
+          - "kms:List*"
+          - "kms:RevokeGrant"
+          Effect: "Allow"
+          Principal:
+            AWS: "arn:aws:iam::294427322944:root"
+          Sid: "Allow direct access to key metadata to the account"
+        Id: "auto-elasticfilesystem-1"
+      KeySpec: "SYMMETRIC_DEFAULT"
+      Enabled: true
+      EnableKeyRotation: true
+      KeyUsage: "ENCRYPT_DECRYPT"
+      Tags: []
+  RDSDBInstance:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::RDS::DBInstance"
+    DeletionPolicy: "Retain"
+    Properties:
+      DatabaseInsightsMode: "standard"
+      StorageEncrypted: true
+      AssociatedRoles: []
+      Port: "3306"
+      AdditionalStorageVolumes: []
+      ProcessorFeatures: []
+      StorageThroughput: 0
+      PreferredBackupWindow: "04:23-04:53"
+      MonitoringInterval: 0
+      DBParameterGroupName: "default.mysql8.4"
+      NetworkType: "IPV4"
+      DedicatedLogVolume: false
+      CopyTagsToSnapshot: true
+      MultiAZ: false
+      Engine: "mysql"
+      Tags: []
+      EngineLifecycleSupport: "open-source-rds-extended-support-disabled"
+      LicenseModel: "general-public-license"
+      EngineVersion: "8.4.9"
+      StorageType: "gp2"
+      KmsKeyId: "arn:aws:kms:us-east-1:294427322944:key/b4960b5e-e5ac-43e0-9300-f148cd6520f4"
+      DBInstanceClass: "db.t4g.micro"
+      AvailabilityZone: "us-east-1b"
+      OptionGroupName: "default:mysql-8-4"
+      PreferredMaintenanceWindow: "sat:07:10-sat:07:40"
+      EnablePerformanceInsights: false
+      AutoMinorVersionUpgrade: true
+      DBSubnetGroupName: "default-vpc-09e19e479da163d21"
+      DeletionProtection: false
+      DBInstanceIdentifier: "cloudcart-rds"
+      AllocatedStorage: "20"
+      BackupTarget: "region"
+      CACertificateIdentifier: "rds-ca-rsa2048-g1"
+      ManageMasterUserPassword: false
+      MasterUserSecret: {}
+      VPCSecurityGroups:
+      - "sg-002a82a5781eaf151"
+      DBSecurityGroups: []
+      MasterUsername: "admin"
+      MaxAllocatedStorage: 1000
+      EnableIAMDatabaseAuthentication: false
+      PubliclyAccessible: false
+      BackupRetentionPeriod: 1
+      EnableCloudwatchLogsExports: []
+  EC2VolumePS:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Volume"
+    DeletionPolicy: "Retain"
+    Properties:
+      MultiAttachEnabled: false
+      VolumeType: "gp3"
+      Encrypted: false
+      Size: 10
+      AutoEnableIO: false
+      AvailabilityZoneId: "use1-az1"
+      AvailabilityZone: "us-east-1a"
+      Throughput: 125
+      Iops: 3000
+      Tags:
+      - Value: " CloudCart-EBS-A"
+        Key: "Name"
+  EC2NetworkInterface:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::NetworkInterface"
+    DeletionPolicy: "Retain"
+    Properties:
+      SourceDestCheck: true
+      Description: ""
+      PrivateIpAddresses:
+      - PrivateIpAddress: "192.168.1.87"
+        Primary: true
+      Ipv6PrefixCount: 0
+      Ipv4Prefixes: []
+      Ipv4PrefixCount: 0
+      GroupSet:
+      - "sg-02e6ff0fdc04c308e"
+      Ipv6Prefixes: []
+      SubnetId: "subnet-055065983e32f8d80"
+      Tags: []
+  EC2InternetGateway:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::InternetGateway"
+    DeletionPolicy: "Retain"
+    Properties:
+      Tags:
+      - Value: "public-CloudCart-IGW"
+        Key: "Name"
+  EC2SubnetRouteTableAssociation:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::SubnetRouteTableAssociation"
+    DeletionPolicy: "Retain"
+    Properties:
+      RouteTableId: "rtb-00af4ec779cd5ce98"
+      SubnetId: "subnet-0d30d8e1700a2c9af"
+  EC2VolumeAttachmentBb:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::VolumeAttachment"
+    DeletionPolicy: "Retain"
+    Properties:
+      VolumeId: "vol-0693cb6e4441af7f1"
+      InstanceId: "i-03648cf99fbdaf219"
+      Device: "/dev/sdf"
+      EbsCardIndex: 0
+  EC2VolumeAttachmentKL:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::VolumeAttachment"
+    DeletionPolicy: "Retain"
+    Properties:
+      VolumeId: "vol-06a5890d9c0c5b610"
+      InstanceId: "i-0d8cd7f84fe21f319"
+      Device: "/dev/sdf"
+      EbsCardIndex: 0
+  EC2SecurityGroupWg:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::SecurityGroup"
+    DeletionPolicy: "Retain"
+    Properties:
+      GroupDescription: "Allow HTTP from Internet to ALB"
+      GroupName: "CloudCart-ALB-SG"
+      VpcId: "vpc-09e19e479da163d21"
+      SecurityGroupIngress:
+      - CidrIp: "0.0.0.0/0"
+        IpProtocol: "tcp"
+        FromPort: 80
+        ToPort: 80
+      SecurityGroupEgress:
+      - CidrIp: "0.0.0.0/0"
+        IpProtocol: "-1"
+      Tags:
+      - Value: "CloudCart-ALB-SG"
+        Key: "Name"
+  EFSFileSystem:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EFS::FileSystem"
+    DeletionPolicy: "Retain"
+    Properties:
+      KmsKeyId: "arn:aws:kms:us-east-1:294427322944:key/40958556-e154-4f1b-bcc3-14fde17e74ec"
+      PerformanceMode: "generalPurpose"
+      Encrypted: true
+      FileSystemTags:
+      - Value: "CloudCart-EFS"
+        Key: "Name"
+      FileSystemProtection:
+        ReplicationOverwriteProtection: "ENABLED"
+      LifecyclePolicies:
+      - TransitionToIA: "AFTER_30_DAYS"
+      - TransitionToArchive: "AFTER_90_DAYS"
+      ThroughputMode: "elastic"
+      BackupPolicy:
+        Status: "ENABLED"
+  CloudWatchAlarmTargetTrackingCloudCartASGAlarmHigh17213571d2d94aaf8b36f2e7bb65617d:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::CloudWatch::Alarm"
+    DeletionPolicy: "Retain"
+    Properties:
+      ComparisonOperator: "GreaterThanThreshold"
+      Dimensions:
+      - Value: "CloudCart-ASG"
+        Name: "AutoScalingGroupName"
+      Period: 60
+      EvaluationPeriods: 3
+      Namespace: "AWS/EC2"
+      OKActions: []
+      AlarmActions:
+      - "arn:aws:autoscaling:us-east-1:294427322944:scalingPolicy:e12e6949-a2ac-483e-af12-41f79f5a34b5:autoScalingGroupName/CloudCart-ASG:policyName/CloudCart-CPU-Scaling"
+      MetricName: "CPUUtilization"
+      ActionsEnabled: true
+      AlarmDescription: "DO NOT EDIT OR DELETE. For TargetTrackingScaling policy arn:aws:autoscaling:us-east-1:294427322944:scalingPolicy:e12e6949-a2ac-483e-af12-41f79f5a34b5:autoScalingGroupName/CloudCart-ASG:policyName/CloudCart-CPU-Scaling."
+      AlarmName: "TargetTracking-CloudCart-ASG-AlarmHigh-17213571-d2d9-4aaf-8b36-f2e7bb65617d"
+      Statistic: "Average"
+      InsufficientDataActions: []
+      Tags: []
+      Threshold: 50
+  EC2VPCEndpoint:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::VPCEndpoint"
+    DeletionPolicy: "Retain"
+    Properties:
+      PrivateDnsEnabled: false
+      IpAddressType: "ipv4"
+      ServiceRegion: "us-east-1"
+      DnsOptions:
+        PrivateDnsOnlyForInboundResolverEndpoint: "NotSpecified"
+        PrivateDnsSpecifiedDomains:
+        - "*"
+        DnsRecordIpType: "service-defined"
+        PrivateDnsPreference: "VERIFIED_DOMAINS_ONLY"
+      ResourceConfigurationArn: ""
+      SecurityGroupIds: []
+      SubnetIds: []
+      ServiceNetworkArn: ""
+      VpcId: "vpc-09e19e479da163d21"
+      RouteTableIds:
+      - Ref: "EC2RouteTableTN"
+      ServiceName: "com.amazonaws.us-east-1.s3"
+      PolicyDocument:
+        Version: "2008-10-17"
+        Statement:
+        - Resource: "*"
+          Action: "*"
+          Effect: "Allow"
+          Principal: "*"
+      VpcEndpointType: "Gateway"
+      Tags:
+      - Value: "CloudCart-S3-Endpoint"
+        Key: "Name"
+  RDSDBParameterGroupDefaultmysql84:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::RDS::DBParameterGroup"
+    DeletionPolicy: "Retain"
+    Properties:
+      DBParameterGroupName: "default.mysql8.4"
+      Family: "mysql8.4"
+      Description: "Default parameter group for mysql8.4"
+      Parameters: {}
+  EFSMountTargetIQ:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EFS::MountTarget"
+    DeletionPolicy: "Retain"
+    Properties:
+      SecurityGroups:
+      - "sg-0a284fc70d00e7000"
+      FileSystemId: "fs-0630c6e708f70837c"
+      IpAddress: "192.168.1.90"
+      SubnetId: "subnet-055065983e32f8d80"
+  EC2VolumeVi:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Volume"
+    DeletionPolicy: "Retain"
+    Properties:
+      MultiAttachEnabled: false
+      SnapshotId: "snap-0bc9cf3f9e4893b60"
+      VolumeType: "gp3"
+      Encrypted: false
+      Size: 8
+      AutoEnableIO: true
+      AvailabilityZoneId: "use1-az2"
+      AvailabilityZone: "us-east-1b"
+      Throughput: 125
+      Iops: 3000
+      Tags: []
+  AutoScalingScalingPolicyScalingPolicye12e6949a2ac483eaf1241f79f5a34b5autoScalingGroupNameCloudCartASGpolicyNameCloudCartCPUScaling:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::AutoScaling::ScalingPolicy"
+    DeletionPolicy: "Retain"
+    Properties:
+      PolicyType: "TargetTrackingScaling"
+      TargetTrackingConfiguration:
+        PredefinedMetricSpecification:
+          PredefinedMetricType: "ASGAverageCPUUtilization"
+        TargetValue: 50
+        DisableScaleIn: false
+      AutoScalingGroupName: "CloudCart-ASG"
+  EC2Subnet:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Subnet"
+    DeletionPolicy: "Retain"
+    Properties:
+      MapPublicIpOnLaunch: false
+      EnableDns64: false
+      VpcId: "vpc-09e19e479da163d21"
+      AvailabilityZoneId: "use1-az1"
+      PrivateDnsNameOptionsOnLaunch:
+        EnableResourceNameDnsARecord: false
+        HostnameType: "ip-name"
+        EnableResourceNameDnsAAAARecord: false
+      AvailabilityZone: "us-east-1a"
+      CidrBlock: "192.168.1.0/27"
+      Ipv6Native: false
+      Tags:
+      - Value: "Public-A-ALB"
+        Key: "Name"
+  EC2SecurityGroup:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::SecurityGroup"
+    DeletionPolicy: "Retain"
+    Properties:
+      GroupDescription: "Allow MySQL access from CloudCart EC2 instances"
+      GroupName: "CloudCart-RDS-SG"
+      VpcId: "vpc-09e19e479da163d21"
+      SecurityGroupIngress:
+      - IpProtocol: "tcp"
+        FromPort: 3306
+        SourceSecurityGroupId: "sg-02e6ff0fdc04c308e"
+        ToPort: 3306
+        SourceSecurityGroupOwnerId: "294427322944"
+      SecurityGroupEgress:
+      - CidrIp: "0.0.0.0/0"
+        IpProtocol: "-1"
+      Tags:
+      - Value: "CloudCart-RDS-SG"
+        Key: "Name"
+  EFSMountTarget:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EFS::MountTarget"
+    DeletionPolicy: "Retain"
+    Properties:
+      SecurityGroups:
+      - "sg-0a284fc70d00e7000"
+      FileSystemId: "fs-0630c6e708f70837c"
+      IpAddress: "192.168.1.207"
+      SubnetId: "subnet-0edb62c6e770b0f8e"
+  EC2RouteTableNz:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::RouteTable"
+    DeletionPolicy: "Retain"
+    Properties:
+      VpcId: "vpc-09e19e479da163d21"
+      Tags:
+      - Value: "CloudCart-Main-RootTable"
+        Key: "Name"
+  EC2LaunchTemplate:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::LaunchTemplate"
+    DeletionPolicy: "Retain"
+    Properties:
+      LaunchTemplateData:
+        SecurityGroups:
+          Ref: "EC2LaunchTemplateLaunchTemplateDataSecurityGroupsyCokh"
+        NetworkPerformanceOptions:
+          BandwidthWeighting:
+            Ref: "EC2LaunchTemplateLaunchTemplateDataNetworkPerformanceOptionsBandwidthWeightingrmOW2"
+        UserData:
+          Ref: "EC2LaunchTemplateLaunchTemplateDataUserData55Tuw"
+        MaintenanceOptions:
+          AutoRecovery:
+            Ref: "EC2LaunchTemplateLaunchTemplateDataMaintenanceOptionsAutoRecoverybltxC"
+        IamInstanceProfile:
+          Arn:
+            Ref: "EC2LaunchTemplateLaunchTemplateDataIamInstanceProfileArn5Z9iq"
+          Name:
+            Ref: "EC2LaunchTemplateLaunchTemplateDataIamInstanceProfileNamewWwC5"
+        KernelId:
+          Ref: "EC2LaunchTemplateLaunchTemplateDataKernelIdnhctl"
+        EbsOptimized:
+          Ref: "EC2LaunchTemplateLaunchTemplateDataEbsOptimized4SFlJ"
+        Placement:
+          Tenancy:
+            Ref: "EC2LaunchTemplateLaunchTemplateDataPlacementTenancyQOO90"
+          GroupName:
+            Ref: "EC2LaunchTemplateLaunchTemplateDataPlacementGroupNameUsOxd"
+          SpreadDomain:
+            Ref: "EC2LaunchTemplateLaunchTemplateDataPlacementSpreadDomain0l0ph"
+          PartitionNumber:
+            Ref: "EC2LaunchTemplateLaunchTemplateDataPlacementPartitionNumberpYToH"
+          Affinity:
+            Ref: "EC2LaunchTemplateLaunchTemplateDataPlacementAffinityzSOwu"
+          AvailabilityZone:
+            Ref: "EC2LaunchTemplateLaunchTemplateDataPlacementAvailabilityZone0PKq8"
+          HostResourceGroupArn:
+            Ref: "EC2LaunchTemplateLaunchTemplateDataPlacementHostResourceGroupArncqS1n"
+          HostId:
+            Ref: "EC2LaunchTemplateLaunchTemplateDataPlacementHostIdnpYui"
+          GroupId:
+            Ref: "EC2LaunchTemplateLaunchTemplateDataPlacementGroupIdcRu95"
+        EnclaveOptions:
+          Enabled:
+            Ref: "EC2LaunchTemplateLaunchTemplateDataEnclaveOptionsEnabledcfSI0"
+        ImageId:
+          Ref: "EC2LaunchTemplateLaunchTemplateDataImageIdtWLoE"
+        InstanceType:
+          Ref: "EC2LaunchTemplateLaunchTemplateDataInstanceTypeOVXis"
+        Monitoring:
+          Enabled:
+            Ref: "EC2LaunchTemplateLaunchTemplateDataMonitoringEnabledabKbo"
+        HibernationOptions:
+          Configured:
+            Ref: "EC2LaunchTemplateLaunchTemplateDataHibernationOptionsConfiguredyL5Th"
+        MetadataOptions:
+          HttpPutResponseHopLimit:
+            Ref: "EC2LaunchTemplateLaunchTemplateDataMetadataOptionsHttpPutResponseHopLimitNcPNC"
+          HttpTokens:
+            Ref: "EC2LaunchTemplateLaunchTemplateDataMetadataOptionsHttpTokensgNy9B"
+          HttpProtocolIpv6:
+            Ref: "EC2LaunchTemplateLaunchTemplateDataMetadataOptionsHttpProtocolIpv6qGFnV"
+          InstanceMetadataTags:
+            Ref: "EC2LaunchTemplateLaunchTemplateDataMetadataOptionsInstanceMetadataTagsBWVg2"
+          HttpEndpoint:
+            Ref: "EC2LaunchTemplateLaunchTemplateDataMetadataOptionsHttpEndpointm8AzK"
+        DisableApiStop:
+          Ref: "EC2LaunchTemplateLaunchTemplateDataDisableApiStopktOFt"
+        InstanceInitiatedShutdownBehavior:
+          Ref: "EC2LaunchTemplateLaunchTemplateDataInstanceInitiatedShutdownBehavior2DvAN"
+        CpuOptions:
+          ThreadsPerCore:
+            Ref: "EC2LaunchTemplateLaunchTemplateDataCpuOptionsThreadsPerCorepwBea"
+          AmdSevSnp:
+            Ref: "EC2LaunchTemplateLaunchTemplateDataCpuOptionsAmdSevSnpVYbrt"
+          CoreCount:
+            Ref: "EC2LaunchTemplateLaunchTemplateDataCpuOptionsCoreCountqHu3e"
+          NestedVirtualization:
+            Ref: "EC2LaunchTemplateLaunchTemplateDataCpuOptionsNestedVirtualizationA447b"
+        PrivateDnsNameOptions:
+          EnableResourceNameDnsARecord:
+            Ref: "EC2LaunchTemplateLaunchTemplateDataPrivateDnsNameOptionsEnableResourceNameDnsARecordEAzbK"
+          HostnameType:
+            Ref: "EC2LaunchTemplateLaunchTemplateDataPrivateDnsNameOptionsHostnameTypeRw70B"
+          EnableResourceNameDnsAAAARecord:
+            Ref: "EC2LaunchTemplateLaunchTemplateDataPrivateDnsNameOptionsEnableResourceNameDnsAAAARecordFwfs3"
+        SecurityGroupIds:
+          Ref: "EC2LaunchTemplateLaunchTemplateDataSecurityGroupIdsKUp9t"
+        KeyName:
+          Ref: "EC2LaunchTemplateLaunchTemplateDataKeyNameHVHGI"
+        DisableApiTermination:
+          Ref: "EC2LaunchTemplateLaunchTemplateDataDisableApiTerminationIMpzm"
+        InstanceMarketOptions:
+          SpotOptions:
+            InstanceInterruptionBehavior:
+              Ref: "EC2LaunchTemplateLaunchTemplateDataInstanceMarketOptionsSpotOptionsInstanceInterruptionBehaviorLfYeM"
+            MaxPrice:
+              Ref: "EC2LaunchTemplateLaunchTemplateDataInstanceMarketOptionsSpotOptionsMaxPriceFhpbU"
+            SpotInstanceType:
+              Ref: "EC2LaunchTemplateLaunchTemplateDataInstanceMarketOptionsSpotOptionsSpotInstanceType20lSr"
+            BlockDurationMinutes:
+              Ref: "EC2LaunchTemplateLaunchTemplateDataInstanceMarketOptionsSpotOptionsBlockDurationMinuteswsvc1"
+            ValidUntil:
+              Ref: "EC2LaunchTemplateLaunchTemplateDataInstanceMarketOptionsSpotOptionsValidUntil4KOoz"
+          MarketType:
+            Ref: "EC2LaunchTemplateLaunchTemplateDataInstanceMarketOptionsMarketTypel0sYZ"
+        InstanceRequirements:
+          LocalStorageTypes:
+            Ref: "EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsLocalStorageTypestimZv"
+          InstanceGenerations:
+            Ref: "EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsInstanceGenerationsHW9xc"
+          NetworkInterfaceCount:
+            Max:
+              Ref: "EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsNetworkInterfaceCountMaxwWTZG"
+            Min:
+              Ref: "EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsNetworkInterfaceCountMinqydvo"
+          MemoryGiBPerVCpu:
+            Max:
+              Ref: "EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuMaxvmmZ0"
+            Min:
+              Ref: "EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuMinwV0XZ"
+          AcceleratorTypes:
+            Ref: "EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsAcceleratorTypesjQWrj"
+          VCpuCount:
+            Max:
+              Ref: "EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsVCpuCountMaxpZgg1"
+            Min:
+              Ref: "EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsVCpuCountMin2B4IW"
+          ExcludedInstanceTypes:
+            Ref: "EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsExcludedInstanceTypes2KfcX"
+          AcceleratorManufacturers:
+            Ref: "EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsAcceleratorManufacturersrhFBs"
+          AllowedInstanceTypes:
+            Ref: "EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsAllowedInstanceTypesWQjEm"
+          LocalStorage:
+            Ref: "EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsLocalStorageKOjSI"
+          CpuManufacturers:
+            Ref: "EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsCpuManufacturers9G2EE"
+          NetworkBandwidthGbps:
+            Max:
+              Ref: "EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsNetworkBandwidthGbpsMax76f0Y"
+            Min:
+              Ref: "EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsNetworkBandwidthGbpsMineDZjf"
+          AcceleratorCount:
+            Max:
+              Ref: "EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsAcceleratorCountMaxRtleR"
+            Min:
+              Ref: "EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsAcceleratorCountMinN9MIb"
+          BareMetal:
+            Ref: "EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsBareMetal9QzIJ"
+          RequireHibernateSupport:
+            Ref: "EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsRequireHibernateSupportsuUSK"
+          MaxSpotPriceAsPercentageOfOptimalOnDemandPrice:
+            Ref: "EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsMaxSpotPriceAsPercentageOfOptimalOnDemandPricebog7H"
+          BaselineEbsBandwidthMbps:
+            Max:
+              Ref: "EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsMaxaseE5"
+            Min:
+              Ref: "EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsMin8XCq2"
+          SpotMaxPricePercentageOverLowestPrice:
+            Ref: "EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsSpotMaxPricePercentageOverLowestPriceyooJW"
+          AcceleratorNames:
+            Ref: "EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsAcceleratorNamesPPHBb"
+          AcceleratorTotalMemoryMiB:
+            Max:
+              Ref: "EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsAcceleratorTotalMemoryMiBMax6tsYS"
+            Min:
+              Ref: "EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsAcceleratorTotalMemoryMiBMinXDEf0"
+          OnDemandMaxPricePercentageOverLowestPrice:
+            Ref: "EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsOnDemandMaxPricePercentageOverLowestPriceuptJ9"
+          BurstablePerformance:
+            Ref: "EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsBurstablePerformanceq6X1T"
+          MemoryMiB:
+            Max:
+              Ref: "EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsMemoryMiBMaxpTEtM"
+            Min:
+              Ref: "EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsMemoryMiBMinWq3xi"
+          TotalLocalStorageGB:
+            Max:
+              Ref: "EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsTotalLocalStorageGBMax2Plca"
+            Min:
+              Ref: "EC2LaunchTemplateLaunchTemplateDataInstanceRequirementsTotalLocalStorageGBMin3uxIy"
+        CapacityReservationSpecification:
+          CapacityReservationTarget:
+            CapacityReservationResourceGroupArn:
+              Ref: "EC2LaunchTemplateLaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetCapacityReservationResourceGroupArnpOLhy"
+            CapacityReservationId:
+              Ref: "EC2LaunchTemplateLaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetCapacityReservationIdbiEXM"
+          CapacityReservationPreference:
+            Ref: "EC2LaunchTemplateLaunchTemplateDataCapacityReservationSpecificationCapacityReservationPreferencenXgny"
+        RamDiskId:
+          Ref: "EC2LaunchTemplateLaunchTemplateDataRamDiskIdcUNLd"
+        CreditSpecification:
+          CpuCredits:
+            Ref: "EC2LaunchTemplateLaunchTemplateDataCreditSpecificationCpuCreditsbO1kx"
+      LaunchTemplateName: "CloudCart-ASG-Template"
+  CloudWatchAlarmCloudCartLambdaErrorsAlarm:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::CloudWatch::Alarm"
+    DeletionPolicy: "Retain"
+    Properties:
+      ComparisonOperator: "GreaterThanOrEqualToThreshold"
+      TreatMissingData: "missing"
+      Dimensions:
+      - Value: "CloudCart-S3-Processor"
+        Name: "FunctionName"
+      Period: 300
+      EvaluationPeriods: 1
+      Namespace: "AWS/Lambda"
+      OKActions: []
+      AlarmActions:
+      - "arn:aws:sns:us-east-1:294427322944:CloudCart-Notifications"
+      MetricName: "Errors"
+      ActionsEnabled: true
+      AlarmDescription: "Triggers when CloudCart-S3-Processor Lambda has one or more\
+        \ errors within 5 minutes and sends a notification to CloudCart-Notifications."
+      AlarmName: "CloudCart-Lambda-Errors-Alarm"
+      Statistic: "Sum"
+      InsufficientDataActions: []
+      DatapointsToAlarm: 1
+      Tags: []
+      Threshold: 1
+  EC2SubnetN9:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Subnet"
+    DeletionPolicy: "Retain"
+    Properties:
+      MapPublicIpOnLaunch: false
+      EnableDns64: false
+      VpcId: "vpc-09e19e479da163d21"
+      AvailabilityZoneId: "use1-az2"
+      PrivateDnsNameOptionsOnLaunch:
+        EnableResourceNameDnsARecord: false
+        HostnameType: "ip-name"
+        EnableResourceNameDnsAAAARecord: false
+      AvailabilityZone: "us-east-1b"
+      CidrBlock: "192.168.1.192/27"
+      Ipv6Native: false
+      Tags:
+      - Value: "Private-App-B"
+        Key: "Name"
+  EC2RouteTableKj:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::RouteTable"
+    DeletionPolicy: "Retain"
+    Properties:
+      VpcId: "vpc-0ca2d98b0aaec73dc"
+      Tags:
+      - Value: "lab-rtb-public"
+        Key: "Name"
+  EC2VolumeAttachment:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::VolumeAttachment"
+    DeletionPolicy: "Retain"
+    Properties:
+      VolumeId: "vol-027e1641cc8db7a8a"
+      InstanceId: "i-03648cf99fbdaf219"
+      Device: "/dev/xvda"
+      EbsCardIndex: 0
+  EC2RouteTableHL:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::RouteTable"
+    DeletionPolicy: "Retain"
+    Properties:
+      VpcId: "vpc-02d7018274ab0f022"
+      Tags:
+      - Value: "."
+        Key: "Name"
+  LambdaPermissionFunctionCloudCartS3Processor:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Lambda::Permission"
+    DeletionPolicy: "Retain"
+    Properties:
+      FunctionName: "arn:aws:lambda:us-east-1:294427322944:function:CloudCart-S3-Processor"
+      Action: "lambda:InvokeFunction"
+      SourceArn: "arn:aws:s3:::cloudcart-esraa-files-2026"
+      Principal: "s3.amazonaws.com"
+      SourceAccount: "294427322944"
+  KMSKeyDH:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::KMS::Key"
+    DeletionPolicy: "Retain"
+    Properties:
+      Origin: "AWS_KMS"
+      MultiRegion: false
+      Description: "Default key that protects my RDS database volumes when no other\
+        \ key is defined"
+      KeyPolicy:
+        Version: "2012-10-17"
+        Statement:
+        - Condition:
+            StringEquals:
+              kms:ViaService: "rds.us-east-1.amazonaws.com"
+              kms:CallerAccount: "294427322944"
+          Resource: "*"
+          Action:
+          - "kms:Encrypt"
+          - "kms:Decrypt"
+          - "kms:ReEncrypt*"
+          - "kms:GenerateDataKey*"
+          - "kms:CreateGrant"
+          - "kms:ListGrants"
+          - "kms:DescribeKey"
+          Effect: "Allow"
+          Principal:
+            AWS: "*"
+          Sid: "Allow access through RDS for all principals in the account that are\
+            \ authorized to use RDS"
+        - Resource: "*"
+          Action:
+          - "kms:Describe*"
+          - "kms:Get*"
+          - "kms:List*"
+          - "kms:RevokeGrant"
+          Effect: "Allow"
+          Principal:
+            AWS: "arn:aws:iam::294427322944:root"
+          Sid: "Allow direct access to key metadata to the account"
+        Id: "auto-rds-2"
+      KeySpec: "SYMMETRIC_DEFAULT"
+      Enabled: true
+      EnableKeyRotation: true
+      KeyUsage: "ENCRYPT_DECRYPT"
+      Tags: []
+  SNSTopicCloudCartNotifications:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::SNS::Topic"
+    DeletionPolicy: "Retain"
+    Properties:
+      DisplayName: "CloudCart-Notifications"
+      FifoTopic: false
+      Subscription:
+      - Endpoint: "esraasamir118881@gmail.com"
+        Protocol: "email"
+      TracingConfig: "PassThrough"
+      ArchivePolicy: {}
+      TopicName: "CloudCart-Notifications"
+  EC2SecurityGroupSC:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::SecurityGroup"
+    DeletionPolicy: "Retain"
+    Properties:
+      GroupDescription: "Allow HTTP from ALB only"
+      GroupName: "CloudCart-EC2-SG"
+      VpcId: "vpc-09e19e479da163d21"
+      SecurityGroupIngress:
+      - IpProtocol: "tcp"
+        FromPort: 80
+        SourceSecurityGroupId: "sg-06eb9fd2d793e29fd"
+        ToPort: 80
+        SourceSecurityGroupOwnerId: "294427322944"
+      - IpProtocol: "tcp"
+        FromPort: 6379
+        SourceSecurityGroupId: "sg-02e6ff0fdc04c308e"
+        ToPort: 6379
+        SourceSecurityGroupOwnerId: "294427322944"
+      SecurityGroupEgress:
+      - CidrIp: "0.0.0.0/0"
+        IpProtocol: "-1"
+      Tags:
+      - Value: "CloudCart-EC2-SG"
+        Key: "Name"
+  EC2InternetGatewayBk:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::InternetGateway"
+    DeletionPolicy: "Retain"
+    Properties:
+      Tags:
+      - Value: "My-IGW"
+        Key: "Name"
+  EC2RouteTableTN:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::RouteTable"
+    DeletionPolicy: "Retain"
+    Properties:
+      VpcId: "vpc-09e19e479da163d21"
+      Tags:
+      - Value: "CloudCart-Nat-Root-Table"
+        Key: "Name"
+  RDSDBSubnetGroupDefaultvpc09e19e479da163d21:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::RDS::DBSubnetGroup"
+    DeletionPolicy: "Retain"
+    Properties:
+      DBSubnetGroupDescription: "Created from the RDS Management Console"
+      SubnetIds:
+      - "subnet-0d30d8e1700a2c9af"
+      - "subnet-0f32716c360822a31"
+      DBSubnetGroupName: "default-vpc-09e19e479da163d21"
+  AutoScalingAutoScalingGroupCloudCartASG:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::AutoScaling::AutoScalingGroup"
+    DeletionPolicy: "Retain"
+    Properties:
+      LoadBalancerNames: []
+      ServiceLinkedRoleARN: "arn:aws:iam::294427322944:role/aws-service-role/autoscaling.amazonaws.com/AWSServiceRoleForAutoScaling"
+      TargetGroupARNs:
+      - "arn:aws:elasticloadbalancing:us-east-1:294427322944:targetgroup/CloudCart-TG/038153fb2730daec"
+      AvailabilityZoneIds:
+      - "use1-az1"
+      - "use1-az2"
+      Cooldown: "300"
+      AvailabilityZones:
+      - "us-east-1a"
+      - "us-east-1b"
+      AvailabilityZoneDistribution:
+        CapacityDistributionStrategy: "balanced-best-effort"
+      DesiredCapacity: "2"
+      HealthCheckGracePeriod: 300
+      MetricsCollection: []
+      InstanceLifecyclePolicy:
+        RetentionTriggers:
+          TerminateHookAbandon: "terminate"
+      DeletionProtection: "none"
+      MaxSize: "4"
+      NewInstancesProtectedFromScaleIn: false
+      MinSize: "2"
+      TerminationPolicies:
+      - "Default"
+      LaunchTemplate:
+        Version: "$Default"
+        LaunchTemplateName: "CloudCart-ASG-Template"
+        LaunchTemplateId: "lt-0568b5a3686255bf2"
+      AutoScalingGroupName: "CloudCart-ASG"
+      TrafficSources:
+      - Type: "elbv2"
+        Identifier: "arn:aws:elasticloadbalancing:us-east-1:294427322944:targetgroup/CloudCart-TG/038153fb2730daec"
+      VPCZoneIdentifier:
+      - "subnet-0edb62c6e770b0f8e"
+      - "subnet-055065983e32f8d80"
+      CapacityReservationSpecification:
+        CapacityReservationPreference: "default"
+      Tags:
+      - Value: "CloudCart-ASG-EC2"
+        ResourceType: "auto-scaling-group"
+        ResourceId: "CloudCart-ASG"
+        Key: "Name"
+        PropagateAtLaunch: true
+      HealthCheckType: "ELB"
+  ElasticLoadBalancingV2ListenerListenerappCloudCartALBd3616f8e6bdc26bb47af15907621f865:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::ElasticLoadBalancingV2::Listener"
+    DeletionPolicy: "Retain"
+    Properties:
+      ListenerAttributes:
+      - Value: "true"
+        Key: "routing.http.response.server.enabled"
+      - Value: ""
+        Key: "routing.http.response.access_control_allow_headers.header_value"
+      - Value: ""
+        Key: "routing.http.response.x_frame_options.header_value"
+      - Value: ""
+        Key: "routing.http.response.access_control_allow_methods.header_value"
+      - Value: ""
+        Key: "routing.http.response.access_control_allow_origin.header_value"
+      - Value: ""
+        Key: "routing.http.response.access_control_allow_credentials.header_value"
+      - Value: ""
+        Key: "routing.http.response.x_content_type_options.header_value"
+      - Value: ""
+        Key: "routing.http.response.content_security_policy.header_value"
+      - Value: ""
+        Key: "routing.http.response.access_control_expose_headers.header_value"
+      - Value: ""
+        Key: "routing.http.response.strict_transport_security.header_value"
+      - Value: ""
+        Key: "routing.http.response.access_control_max_age.header_value"
+      Protocol: "HTTP"
+      LoadBalancerArn: "arn:aws:elasticloadbalancing:us-east-1:294427322944:loadbalancer/app/CloudCart-ALB/d3616f8e6bdc26bb"
+      DefaultActions:
+      - Order: 1
+        TargetGroupArn: "arn:aws:elasticloadbalancing:us-east-1:294427322944:targetgroup/CloudCart-TG/038153fb2730daec"
+        Type: "forward"
+        ForwardConfig:
+          TargetGroupStickinessConfig:
+            Enabled: false
+            DurationSeconds: 3600
+          TargetGroups:
+          - TargetGroupArn: "arn:aws:elasticloadbalancing:us-east-1:294427322944:targetgroup/CloudCart-TG/038153fb2730daec"
+            Weight: 1
+      Port: 80
+  EC2Volume:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Volume"
+    DeletionPolicy: "Retain"
+    Properties:
+      MultiAttachEnabled: false
+      SnapshotId: "snap-0bc9cf3f9e4893b60"
+      VolumeType: "gp3"
+      Encrypted: false
+      Size: 8
+      AutoEnableIO: true
+      AvailabilityZoneId: "use1-az1"
+      AvailabilityZone: "us-east-1a"
+      Throughput: 125
+      Iops: 3000
+      Tags: []
+  EC2RouteTableRg:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::RouteTable"
+    DeletionPolicy: "Retain"
+    Properties:
+      VpcId: "vpc-09e19e479da163d21"
+      Tags:
+      - Value: "CloudCart-Public-RootTable"
+        Key: "Name"
+  LambdaFunctionCloudCartS3Processor:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Lambda::Function"
+    DeletionPolicy: "Retain"
+    Properties:
+      MemorySize: 128
+      Description: ""
+      TracingConfig:
+        Mode: "PassThrough"
+      Timeout: 3
+      RuntimeManagementConfig:
+        UpdateRuntimeOn: "Auto"
+      Handler: "lambda_function.lambda_handler"
+      Code:
+        SourceKMSKeyArn:
+          Ref: "LambdaFunctionCloudCartS3ProcessorCodeSourceKMSKeyArngX32c"
+        S3ObjectVersion:
+          Ref: "LambdaFunctionCloudCartS3ProcessorCodeS3ObjectVersion5LGvy"
+        S3Bucket:
+          Ref: "LambdaFunctionCloudCartS3ProcessorCodeS3Bucketj9Il6"
+        ZipFile:
+          Ref: "LambdaFunctionCloudCartS3ProcessorCodeZipFilePXgl6"
+        S3Key:
+          Ref: "LambdaFunctionCloudCartS3ProcessorCodeS3Keyejnti"
+        S3ObjectStorageMode:
+          Ref: "LambdaFunctionCloudCartS3ProcessorCodeS3ObjectStorageModeoCGpe"
+        ImageUri:
+          Ref: "LambdaFunctionCloudCartS3ProcessorCodeImageUrirNw9K"
+      Role: "arn:aws:iam::294427322944:role/service-role/CloudCart-S3-Processor-role-vblgaah0"
+      FileSystemConfigs: []
+      FunctionName: "CloudCart-S3-Processor"
+      Runtime: "python3.13"
+      PackageType: "Zip"
+      LoggingConfig:
+        LogFormat: "Text"
+        LogGroup: "/aws/lambda/CloudCart-S3-Processor"
+      RecursiveLoop: "Terminate"
+      EphemeralStorage:
+        Size: 512
+      Architectures:
+      - "arm64"
+  EC2NetworkInterfaceQa:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::NetworkInterface"
+    DeletionPolicy: "Retain"
+    Properties:
+      SourceDestCheck: true
+      Description: ""
+      PrivateIpAddresses:
+      - PrivateIpAddress: "192.168.1.218"
+        Primary: true
+      Ipv6PrefixCount: 0
+      Ipv4Prefixes: []
+      Ipv4PrefixCount: 0
+      GroupSet:
+      - "sg-02e6ff0fdc04c308e"
+      Ipv6Prefixes: []
+      SubnetId: "subnet-0edb62c6e770b0f8e"
+      Tags: []
+  ElasticLoadBalancingV2TargetGroupTargetgroupCloudCartTG038153fb2730daec:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::ElasticLoadBalancingV2::TargetGroup"
+    DeletionPolicy: "Retain"
+    Properties:
+      IpAddressType: "ipv4"
+      HealthCheckIntervalSeconds: 30
+      Matcher:
+        HttpCode: "200-399"
+      HealthCheckPath: "/Views/Customer/index.php"
+      Port: 80
+      Targets:
+      - Port: 80
+        Id: "i-07b7bdd9b150a8ef3"
+      - Port: 80
+        Id: "i-03648cf99fbdaf219"
+      - Port: 80
+        Id: "i-03975f6d926ed18c0"
+      - Port: 80
+        Id: "i-0d8cd7f84fe21f319"
+      - Port: 80
+        Id: "i-056f26daf02ec626e"
+      HealthCheckEnabled: true
+      ProtocolVersion: "HTTP1"
+      UnhealthyThresholdCount: 2
+      HealthCheckTimeoutSeconds: 5
+      Name: "CloudCart-TG"
+      VpcId: "vpc-09e19e479da163d21"
+      HealthyThresholdCount: 5
+      HealthCheckProtocol: "HTTP"
+      TargetGroupAttributes:
+      - Value: "lb_cookie"
+        Key: "stickiness.type"
+      - Value: "86400"
+        Key: "stickiness.app_cookie.duration_seconds"
+      - Value: "true"
+        Key: "stickiness.enabled"
+      - Value: "1"
+        Key: "target_group_health.dns_failover.minimum_healthy_targets.count"
+      - Value: "use_load_balancer_configuration"
+        Key: "load_balancing.cross_zone.enabled"
+      - Value: "86400"
+        Key: "stickiness.lb_cookie.duration_seconds"
+      - Value: "off"
+        Key: "target_group_health.dns_failover.minimum_healthy_targets.percentage"
+      - Value: "off"
+        Key: "target_group_health.unhealthy_state_routing.minimum_healthy_targets.percentage"
+      - Value: "0"
+        Key: "slow_start.duration_seconds"
+      - Value: "300"
+        Key: "deregistration_delay.timeout_seconds"
+      - Value: "1"
+        Key: "target_group_health.unhealthy_state_routing.minimum_healthy_targets.count"
+      - Value: "off"
+        Key: "load_balancing.algorithm.anomaly_mitigation"
+      - Value: ""
+        Key: "stickiness.app_cookie.cookie_name"
+      - Value: "round_robin"
+        Key: "load_balancing.algorithm.type"
+      TargetType: "instance"
+      HealthCheckPort: "traffic-port"
+      Protocol: "HTTP"
+      Tags: []
+  EC2RouteLJ:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Route"
+    DeletionPolicy: "Retain"
+    Properties:
+      GatewayId: "igw-05c1582815e0e9a16"
+      RouteTableId: "rtb-09aa11e9aee5ce5ca"
+      DestinationCidrBlock: "0.0.0.0/0"
+  EC2SubnetI5:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Subnet"
+    DeletionPolicy: "Retain"
+    Properties:
+      MapPublicIpOnLaunch: false
+      EnableDns64: false
+      VpcId: "vpc-09e19e479da163d21"
+      AvailabilityZoneId: "use1-az2"
+      PrivateDnsNameOptionsOnLaunch:
+        EnableResourceNameDnsARecord: false
+        HostnameType: "ip-name"
+        EnableResourceNameDnsAAAARecord: false
+      AvailabilityZone: "us-east-1b"
+      CidrBlock: "192.168.1.160/27"
+      Ipv6Native: false
+      Tags:
+      - Value: "Private-Data-B"
+        Key: "Name"
+  EC2VPC:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::VPC"
+    DeletionPolicy: "Retain"
+    Properties:
+      CidrBlock: "192.168.1.0/24"
+      EnableDnsSupport: true
+      InstanceTenancy: "default"
+      EnableDnsHostnames: false
+      Tags:
+      - Value: "GlobalVPC"
+        Key: "Name"
+  EC2RouteTableKO:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::RouteTable"
+    DeletionPolicy: "Retain"
+    Properties:
+      VpcId: "vpc-09e19e479da163d21"
+      Tags:
+      - Value: "AutoScalaling-Private-Route-Table"
+        Key: "Name"
+  EC2RouteTable:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::RouteTable"
+    DeletionPolicy: "Retain"
+    Properties:
+      VpcId: "vpc-09e19e479da163d21"
+      Tags:
+      - Value: "Private-Data-RouteTable"
+        Key: "Name"
+  EC2VPCGatewayAttachmentIGWPR:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::VPCGatewayAttachment"
+    DeletionPolicy: "Retain"
+    Properties:
+      InternetGatewayId: "igw-05c1582815e0e9a16"
+      VpcId: "vpc-09e19e479da163d21"
+  IAMRoleCloudCartEC2SSMRole:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::IAM::Role"
+    DeletionPolicy: "Retain"
+    Properties:
+      Path: "/"
+      ManagedPolicyArns:
+      - "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
+      MaxSessionDuration: 3600
+      RoleName: "CloudCart-EC2-SSM-Role"
+      Description: "Allows EC2 instances to call AWS services like CloudWatch and\
+        \ Systems Manager on your behalf."
+      Policies:
+      - PolicyDocument:
+          Version: "2012-10-17"
+          Statement:
+          - Resource: "arn:aws:s3:::cloudcart-esraa-files-2026"
+            Action: "s3:ListBucket"
+            Effect: "Allow"
+            Sid: "ListCloudCartBucket"
+          - Resource: "arn:aws:s3:::cloudcart-esraa-files-2026/*"
+            Action: "s3:GetObject"
+            Effect: "Allow"
+            Sid: "DownloadCloudCartFiles"
+          - Resource: "arn:aws:sns:us-east-1:294427322944:CloudCart-Notifications"
+            Action: "sns:Publish"
+            Effect: "Allow"
+            Sid: "PublishCloudCartNotifications"
+        PolicyName: "SSN-S3"
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+        - Action: "sts:AssumeRole"
+          Effect: "Allow"
+          Principal:
+            Service: "ec2.amazonaws.com"
+          Sid: ""
+  IAMRoleCloudCartS3Processorrolevblgaah0:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::IAM::Role"
+    DeletionPolicy: "Retain"
+    Properties:
+      Path: "/service-role/"
+      ManagedPolicyArns:
+      - "arn:aws:iam::294427322944:policy/service-role/AWSLambdaBasicExecutionRole-560022d3-70a2-4312-a27c-6441976cd939"
+      MaxSessionDuration: 3600
+      RoleName: "CloudCart-S3-Processor-role-vblgaah0"
+      Policies:
+      - PolicyDocument:
+          Version: "2012-10-17"
+          Statement:
+          - Resource: "arn:aws:s3:::cloudcart-esraa-files-2026/*"
+            Action:
+            - "s3:GetObject"
+            Effect: "Allow"
+            Sid: "ReadFromCloudCartS3"
+          - Resource: "arn:aws:sns:us-east-1:294427322944:CloudCart-Notifications"
+            Action:
+            - "sns:Publish"
+            Effect: "Allow"
+            Sid: "PublishToSNS"
+        PolicyName: "CloudCart-S3-Access-Policy"
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+        - Action: "sts:AssumeRole"
+          Effect: "Allow"
+          Principal:
+            Service: "lambda.amazonaws.com"
